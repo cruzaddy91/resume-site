@@ -1,4 +1,3 @@
-// Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -7,13 +6,10 @@ hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
 document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
     hamburger.classList.remove('active');
     navMenu.classList.remove('active');
 }));
-
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -27,7 +23,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background change on scroll
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
@@ -38,8 +33,6 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
-
-// Active navigation link highlighting
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
@@ -61,47 +54,38 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Contact form handling
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get form data
         const formData = new FormData(this);
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // Simple validation
         if (!name || !email || !subject || !message) {
             showNotification('Please fill in all fields', 'error');
             return;
         }
         
-        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             showNotification('Please enter a valid email address', 'error');
             return;
         }
         
-        // Simulate form submission (replace with actual form handling)
         showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
         this.reset();
     });
 }
-
-// Notification system
 function showNotification(message, type = 'info') {
-    // Remove existing notifications
     const existingNotification = document.querySelector('.notification');
     if (existingNotification) {
         existingNotification.remove();
     }
     
-    // Create notification element
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     notification.innerHTML = `
@@ -111,7 +95,6 @@ function showNotification(message, type = 'info') {
         </div>
     `;
     
-    // Add styles
     notification.style.cssText = `
         position: fixed;
         top: 20px;
@@ -127,22 +110,18 @@ function showNotification(message, type = 'info') {
         max-width: 400px;
     `;
     
-    // Add to page
     document.body.appendChild(notification);
     
-    // Animate in
     setTimeout(() => {
         notification.style.transform = 'translateX(0)';
     }, 100);
     
-    // Close button functionality
     const closeBtn = notification.querySelector('.notification-close');
     closeBtn.addEventListener('click', () => {
         notification.style.transform = 'translateX(100%)';
         setTimeout(() => notification.remove(), 300);
     });
     
-    // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
             notification.style.transform = 'translateX(100%)';
@@ -150,8 +129,6 @@ function showNotification(message, type = 'info') {
         }
     }, 5000);
 }
-
-// Intersection Observer for scroll animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -166,7 +143,6 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
     
@@ -177,8 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
-
-// Typing animation for hero title
 function typeWriter(element, text, speed = 100) {
     let i = 0;
     element.innerHTML = '';
@@ -194,7 +168,6 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing animation when page loads
 document.addEventListener('DOMContentLoaded', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
@@ -204,8 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 });
-
-// Parallax effect for hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
@@ -215,7 +186,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Skills animation on scroll
 const skillsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -242,8 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
         skillsObserver.observe(category);
     });
 });
-
-// Project cards hover effect enhancement
 document.addEventListener('DOMContentLoaded', () => {
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -258,7 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease';
@@ -267,8 +234,6 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
-
-// Add active class to current navigation item
 function setActiveNavItem() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
@@ -292,7 +257,6 @@ function setActiveNavItem() {
 
 window.addEventListener('scroll', setActiveNavItem);
 
-// Add CSS for active navigation state
 const style = document.createElement('style');
 style.textContent = `
     .nav-link.active {
