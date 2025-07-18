@@ -170,8 +170,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For questions or support, please contact:
 - Email: [aec0713@westminsteru.edu]
-- LinkedIn: [your LinkedIn profile]
-- GitHub: [your GitHub profile]
+- LinkedIn: [https://www.linkedin.com/in/cruzadam91/]
+- GitHub: [https://github.com/cruzaddy91?tab=repositories]
 
 ---
 
