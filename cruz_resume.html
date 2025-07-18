@@ -933,6 +933,30 @@
                 opacity: 1 !important;
                 color: black !important;
                 background: white !important;
+                animation: none !important;
+                animation-delay: 0s !important;
+                animation-fill-mode: forwards !important;
+                transform: none !important;
+                -webkit-transform: none !important;
+            }
+            
+            /* Force all animations to complete immediately */
+            * {
+                animation: none !important;
+                animation-delay: 0s !important;
+                animation-fill-mode: forwards !important;
+                transition: none !important;
+                -webkit-animation: none !important;
+                -webkit-transition: none !important;
+            }
+            
+            /* Ensure all content is immediately visible */
+            .section-content, .section, .right-column, .left-column {
+                opacity: 1 !important;
+                visibility: visible !important;
+                display: block !important;
+                transform: none !important;
+                -webkit-transform: none !important;
             }
             
             /* Safari-specific fixes */
@@ -1027,6 +1051,50 @@
                 padding: 1px 3px !important;
                 -webkit-print-color-adjust: exact !important;
                 color-adjust: exact !important;
+            }
+            
+            /* Specific override for Professional Summary */
+            .section:has(h2:contains("Professional Summary")),
+            .section h2:contains("Professional Summary") + .section-content,
+            .right-column .section:first-child,
+            .right-column .section:first-child .section-content {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: black !important;
+                background: white !important;
+                animation: none !important;
+                animation-delay: 0s !important;
+                transform: none !important;
+                -webkit-transform: none !important;
+                position: static !important;
+                overflow: visible !important;
+                height: auto !important;
+                width: auto !important;
+                max-height: none !important;
+                max-width: none !important;
+            }
+            
+            /* Force all text in Professional Summary to be visible */
+            .right-column .section:first-child p,
+            .right-column .section:first-child .section-content p,
+            .professional-summary-section,
+            .professional-summary-content,
+            .professional-summary-section p,
+            .professional-summary-content p {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: black !important;
+                line-height: 1.4 !important;
+                margin-bottom: 0.5rem !important;
+                font-size: 12pt !important;
+                animation: none !important;
+                animation-delay: 0s !important;
+                transform: none !important;
+                -webkit-transform: none !important;
+                position: static !important;
+                overflow: visible !important;
             }
         }
         
@@ -1460,9 +1528,9 @@
         </div>
     </div>
     <div class="right-column">
-        <div class="section">
+        <div class="section professional-summary-section">
             <h2>Professional Summary</h2>
-            <div class="section-content">
+            <div class="section-content professional-summary-content">
                 <p>Computer Science student with specialized experience in <span class="keyword">software development</span>, <span class="keyword">system testing</span>, and <span class="keyword">quality assurance</span>, combined with extensive aviation background from Purdue University's Professional Flight program. Proven track record in <span class="keyword">full software development lifecycle</span> including requirements analysis, design documentation, development, and comprehensive testing. Experienced in <span class="keyword">Java programming</span>, <span class="keyword">database systems</span>, and <span class="keyword">web application development</span> with strong foundation in <span class="keyword">object-oriented design</span> and <span class="keyword">software engineering principles</span>. Demonstrated ability to handle <span class="keyword">complex system integration</span>, <span class="keyword">API development</span>, and <span class="keyword">technical documentation</span> for enterprise solutions. Unique combination of <span class="keyword">aviation operations knowledge</span> including aircraft weight and balance calculations, turbine aircraft operations, and flight management systems, with <span class="keyword">software engineering expertise</span>. Seeking opportunities in Software Engineering roles where I can leverage my technical skills and aviation domain knowledge to contribute to aerospace software solutions, particularly in weight and balance systems and flight operations software.</p>
                 <p><em>This resume was personally crafted using an HTML/CSS formatting framework to ensure a modern and professional presentation.</em></p>
             </div>
