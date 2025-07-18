@@ -159,6 +159,96 @@
             --shadow-color-dark: rgba(69, 10, 10, 0.6);
         }
 
+        /* Print Styles for PDF Generation */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            body {
+                margin: 0 !important;
+                padding: 0 !important;
+                background: white !important;
+                color: black !important;
+                font-size: 12pt !important;
+                line-height: 1.4 !important;
+                -webkit-font-smoothing: antialiased !important;
+                -moz-osx-font-smoothing: grayscale !important;
+            }
+            
+            .resume-container {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0.5in !important;
+                box-shadow: none !important;
+                background: white !important;
+            }
+            
+            .header, .section {
+                page-break-inside: avoid !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .section-title {
+                color: black !important;
+                border-bottom: 2px solid black !important;
+                margin-bottom: 0.5rem !important;
+                page-break-after: avoid !important;
+            }
+            
+            .experience-item, .education-item, .skill-category {
+                page-break-inside: avoid !important;
+                margin-bottom: 0.75rem !important;
+            }
+            
+            .theme-switcher, .print-btn, .download-btn {
+                display: none !important;
+            }
+            
+            /* Ensure text is visible */
+            h1, h2, h3, h4, h5, h6 {
+                color: black !important;
+                font-weight: bold !important;
+            }
+            
+            p, li, td, th {
+                color: black !important;
+            }
+            
+            /* Force background colors to print */
+            .highlight-bg {
+                background-color: #f0f0f0 !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Ensure borders print */
+            .border, .card {
+                border: 1px solid #ccc !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+        
+        /* Cross-browser compatibility */
+        @supports (-webkit-appearance: none) {
+            /* Safari/Chrome specific fixes */
+            .resume-container {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+        }
+        
+        @supports (-moz-appearance: none) {
+            /* Firefox specific fixes */
+            .resume-container {
+                -moz-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+        }
+        
         /* Theme Switcher Buttons */
         .theme-switcher {
             position: fixed;
@@ -180,6 +270,49 @@
         .theme-switcher:hover {
             transform: translateY(-2px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Print Controls */
+        .print-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .print-controls:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .print-btn, .download-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            white-space: nowrap;
+        }
+        
+        .print-btn:hover, .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
         }
 
         .theme-btn {
@@ -1063,6 +1196,16 @@
         <button class="theme-btn theme-btn-purple" onclick="setTheme('purple-silver')" title="Purple Theme"></button>
         <button class="theme-btn theme-btn-crimson" onclick="setTheme('crimson-cream')" title="Crimson Theme"></button>
     </div>
+    
+    <!-- Print Controls -->
+    <div class="print-controls">
+        <button class="print-btn" onclick="printResume()" title="Print/Save as PDF">
+            <i class="fas fa-print"></i> Print/Save PDF
+        </button>
+        <button class="download-btn" onclick="downloadPDF()" title="Download PDF">
+            <i class="fas fa-download"></i> Download
+        </button>
+    </div>
 
     <div class="left-column">
         <h2>Skills</h2>
@@ -1391,6 +1534,52 @@
             const savedTheme = localStorage.getItem('selectedTheme') || 'charcoal-bronze';
             setTheme(savedTheme);
         });
+        
+        // Print functionality
+        function printResume() {
+            // Hide print controls before printing
+            const printControls = document.querySelector('.print-controls');
+            const themeSwitcher = document.querySelector('.theme-switcher');
+            
+            if (printControls) printControls.style.display = 'none';
+            if (themeSwitcher) themeSwitcher.style.display = 'none';
+            
+            // Print the page
+            window.print();
+            
+            // Show controls again after printing
+            setTimeout(() => {
+                if (printControls) printControls.style.display = 'flex';
+                if (themeSwitcher) themeSwitcher.style.display = 'flex';
+            }, 1000);
+        }
+        
+        // Download PDF functionality
+        function downloadPDF() {
+            // Create a temporary link to trigger download
+            const link = document.createElement('a');
+            link.href = window.location.href;
+            link.download = 'Adam_Cruz_Resume.pdf';
+            link.target = '_blank';
+            
+            // Hide controls before download
+            const printControls = document.querySelector('.print-controls');
+            const themeSwitcher = document.querySelector('.theme-switcher');
+            
+            if (printControls) printControls.style.display = 'none';
+            if (themeSwitcher) themeSwitcher.style.display = 'none';
+            
+            // Trigger print dialog for PDF save
+            setTimeout(() => {
+                window.print();
+                
+                // Show controls again
+                setTimeout(() => {
+                    if (printControls) printControls.style.display = 'flex';
+                    if (themeSwitcher) themeSwitcher.style.display = 'flex';
+                }, 1000);
+            }, 100);
+        }
     </script>
 </body>
 </html> 
