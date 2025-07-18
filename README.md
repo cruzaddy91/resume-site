@@ -20,6 +20,7 @@ Visit the live website: [Your Netlify URL will be here]
 ```
 resume-site/
 ├── index.html              # Main homepage
+├── landing.html            # Resume & Cover Letter landing page
 ├── styles.css              # Main stylesheet
 ├── script.js               # JavaScript functionality
 ├── cruz_resume.html        # Resume page

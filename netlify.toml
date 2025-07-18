@@ -16,6 +16,11 @@
   to = "/cruz_coverLetter.html"
   status = 200
 
+[[redirects]]
+  from = "/landing"
+  to = "/landing.html"
+  status = 200
+
 # Handle 404 errors
 [[redirects]]
   from = "/*"
