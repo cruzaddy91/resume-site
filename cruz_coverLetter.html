@@ -6,6 +6,16 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Adam Cruz Cover Letter">
+    <meta name="application-name" content="Adam Cruz Cover Letter">
+    <meta name="msapplication-TileColor" content="#1d4ed8">
+    <meta name="theme-color" content="#1d4ed8">
+    <meta name="color-scheme" content="light">
+    <meta name="supported-color-schemes" content="light">
+    <meta name="print-color-scheme" content="light">
+    <meta name="webkit-print-color-adjust" content="exact">
+    <meta name="print-color-adjust" content="exact">
+    <meta name="color-adjust" content="exact">
     <title>Adam Cruz - Cover Letter</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -752,11 +762,60 @@
                 body {
                     -webkit-transform: translateZ(0) !important;
                     transform: translateZ(0) !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    -webkit-text-size-adjust: 100% !important;
+                    -webkit-print-color-adjust: exact !important;
                 }
                 
                 .cover-letter-content {
                     -webkit-transform: translateZ(0) !important;
                     transform: translateZ(0) !important;
+                    -webkit-print-color-adjust: exact !important;
+                }
+                
+                /* Force Safari to render all text */
+                .section, .section-content, .header {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                    -webkit-print-color-adjust: exact !important;
+                    -webkit-font-smoothing: antialiased !important;
+                }
+                
+                /* Ensure text is visible in Safari PDF export */
+                h1, h2, h3, h4, h5, h6, p, li, div, span {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                    -webkit-print-color-adjust: exact !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    color: black !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
+                }
+            }
+            
+            /* Additional Safari print optimizations */
+            @media print and (-webkit-min-device-pixel-ratio: 0) {
+                * {
+                    -webkit-print-color-adjust: exact !important;
+                    color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                }
+                
+                body {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                    -webkit-font-smoothing: antialiased !important;
+                    -webkit-text-size-adjust: 100% !important;
+                }
+                
+                .cover-letter-content, .section, .section-content {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                    -webkit-print-color-adjust: exact !important;
+                    display: block !important;
+                    visibility: visible !important;
+                    opacity: 1 !important;
                 }
             }
             
