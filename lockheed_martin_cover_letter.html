@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Cruz - Cover Letter - Lockheed Martin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Custom Properties for Theme Colors */
+        :root {
+            /* Default Charcoal Theme */
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --text-light: #34495e;
+            --background-start: #f5f5f5;
+            --background-mid1: #e8e8e8;
+            --background-mid2: #d5d5d5;
+            --background-mid3: #c0c0c0;
+            --background-end: #a0a0a0;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8f8f8;
+            --card-bg-mid2: #f0f0f0;
+            --card-bg-mid3: #e8e8e8;
+            --card-bg-end: #d5d5d5;
+            --border-color: rgba(160, 160, 160, 0.3);
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+            --shadow-color: rgba(52, 73, 94, 0.4);
+            --shadow-color-dark: rgba(52, 73, 94, 0.6);
+        }
+
+        /* Theme Functions */
+        .theme-blue {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --primary-light: #60a5fa;
+            --text-primary: #1e293b;
+            --text-secondary: #334155;
+            --text-tertiary: #475569;
+            --text-light: #64748b;
+            --background-start: #f8fafc;
+            --background-mid1: #e2e8f0;
+            --background-mid2: #cbd5e1;
+            --background-mid3: #94a3b8;
+            --background-end: #64748b;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8fafc;
+            --card-bg-mid2: #e2e8f0;
+            --card-bg-mid3: #cbd5e1;
+            --card-bg-end: #94a3b8;
+            --border-color: rgba(148, 163, 184, 0.3);
+            --highlight-bg: rgba(59, 130, 246, 0.15);
+            --highlight-border: #3b82f6;
+            --shadow-color: rgba(30, 41, 59, 0.4);
+            --shadow-color-dark: rgba(30, 41, 59, 0.6);
+        }
+
+        .theme-charcoal-bronze {
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --text-light: #34495e;
+            --background-start: #f5f5f5;
+            --background-mid1: #e8e8e8;
+            --background-mid2: #d5d5d5;
+            --background-mid3: #c0c0c0;
+            --background-end: #a0a0a0;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8f8f8;
+            --card-bg-mid2: #f0f0f0;
+            --card-bg-mid3: #e8e8e8;
+            --card-bg-end: #d5d5d5;
+            --border-color: rgba(160, 160, 160, 0.3);
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+            --shadow-color: rgba(52, 73, 94, 0.4);
+            --shadow-color-dark: rgba(52, 73, 94, 0.6);
+        }
+
+        .theme-emerald-gold {
+            --primary-color: #059669;
+            --primary-dark: #047857;
+            --primary-light: #10b981;
+            --text-primary: #064e3b;
+            --text-secondary: #065f46;
+            --text-tertiary: #047857;
+            --text-light: #059669;
+            --background-start: #f0fdf4;
+            --background-mid1: #dcfce7;
+            --background-mid2: #bbf7d0;
+            --background-mid3: #86efac;
+            --background-end: #4ade80;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f0fdf4;
+            --card-bg-mid2: #dcfce7;
+            --card-bg-mid3: #bbf7d0;
+            --card-bg-end: #86efac;
+            --border-color: rgba(5, 150, 105, 0.3);
+            --highlight-bg: rgba(5, 150, 105, 0.15);
+            --highlight-border: #059669;
+            --shadow-color: rgba(6, 78, 59, 0.4);
+            --shadow-color-dark: rgba(6, 78, 59, 0.6);
+        }
+
+        .theme-purple-silver {
+            --primary-color: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --text-primary: #2e1065;
+            --text-secondary: #4c1d95;
+            --text-tertiary: #5b21b6;
+            --text-light: #6d28d9;
+            --background-start: #faf5ff;
+            --background-mid1: #f3e8ff;
+            --background-mid2: #e9d5ff;
+            --background-mid3: #d8b4fe;
+            --background-end: #c084fc;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #faf5ff;
+            --card-bg-mid2: #f3e8ff;
+            --card-bg-mid3: #e9d5ff;
+            --card-bg-end: #d8b4fe;
+            --border-color: rgba(139, 92, 246, 0.3);
+            --highlight-bg: rgba(139, 92, 246, 0.15);
+            --highlight-border: #8b5cf6;
+            --shadow-color: rgba(46, 16, 101, 0.4);
+            --shadow-color-dark: rgba(46, 16, 101, 0.6);
+        }
+
+        .theme-crimson-cream {
+            --primary-color: #dc2626;
+            --primary-dark: #b91c1c;
+            --primary-light: #ef4444;
+            --text-primary: #450a0a;
+            --text-secondary: #7f1d1d;
+            --text-tertiary: #991b1b;
+            --text-light: #b91c1c;
+            --background-start: #fef2f2;
+            --background-mid1: #fee2e2;
+            --background-mid2: #fecaca;
+            --background-mid3: #fca5a5;
+            --background-end: #f87171;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #fef2f2;
+            --card-bg-mid2: #fee2e2;
+            --card-bg-mid3: #fecaca;
+            --card-bg-end: #fca5a5;
+            --border-color: rgba(220, 38, 38, 0.3);
+            --highlight-bg: rgba(220, 38, 38, 0.15);
+            --highlight-border: #dc2626;
+            --shadow-color: rgba(69, 10, 10, 0.4);
+            --shadow-color-dark: rgba(69, 10, 10, 0.6);
+        }
+
+        /* Theme Switcher Buttons */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .theme-switcher:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .theme-btn.active {
+            transform: scale(1.15);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-btn-blue {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .theme-btn-charcoal {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+
+        .theme-btn-emerald {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .theme-btn-purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .theme-btn-crimson {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .theme-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-btn.active::after {
+            opacity: 1;
+        }
+
+        /* Apply CSS Variables to Existing Styles */
+        body {
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-mid1) 25%, var(--background-mid2) 50%, var(--background-mid3) 75%, var(--background-end) 100%);
+            font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+            margin: 20px auto;
+            line-height: 1.6;
+            color: var(--text-primary);
+            max-width: 800px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            border-radius: 12px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 
+                0 50px 100px -25px rgba(0, 0, 0, 0.6),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 10px 20px -5px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.3),
+                inset 0 3px 0 rgba(255, 255, 255, 0.4);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.6s ease-out;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .header:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-top: 4px solid var(--primary-dark);
+            box-shadow: 
+                0 70px 140px -30px rgba(0, 0, 0, 0.8),
+                0 35px 70px -15px rgba(0, 0, 0, 0.6),
+                0 15px 30px -8px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(255, 255, 255, 0.4),
+                inset 0 3px 0 rgba(255, 255, 255, 0.5);
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 52px;
+            color: var(--text-primary);
+            margin: 0 0 8px 0;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.15),
+                0 4px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-variant: small-caps;
+            letter-spacing: 2px;
+            position: relative;
+            font-weight: 700;
+            z-index: 1;
+        }
+
+        .header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            color: var(--primary-color);
+            margin: 0 0 25px 0;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+            z-index: 1;
+            position: relative;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 15px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            z-index: 1;
+            position: relative;
+            font-weight: 400;
+        }
+
+        .contact-info div {
+            margin-bottom: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info div:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-info a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-dark);
+            text-decoration: none;
+            text-shadow: 0 0 8px var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+        }
+
+        .contact-info a:hover::before {
+            left: 100%;
+        }
+
+        .cover-letter-content {
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 
+                0 35px 70px -15px var(--shadow-color),
+                0 20px 40px -10px rgba(0, 0, 0, 0.3),
+                0 10px 20px -5px rgba(0, 0, 0, 0.2),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                inset 0 3px 0 rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .cover-letter-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .cover-letter-content:hover {
+            transform: translateY(-4px) scale(1.01);
+            border-top: 3px solid var(--primary-dark);
+            box-shadow: 
+                0 50px 100px -20px var(--shadow-color-dark),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 15px 30px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.25),
+                inset 0 3px 0 rgba(255, 255, 255, 0.98);
+        }
+
+        .cover-letter-content p {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .cover-letter-content p:first-child {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 4px 8px rgba(0, 0, 0, 0.05);
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .cover-letter-content p:first-child::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
+            border-radius: 1px;
+            box-shadow: 0 2px 4px var(--primary-color);
+        }
+
+        .cover-letter-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .keyword {
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: var(--highlight-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 2px solid var(--highlight-border);
+        }
+
+        .keyword:hover {
+            background: var(--highlight-bg);
+            color: var(--text-primary);
+            transform: scale(1.05);
+        }
+
+        .date-section {
+            text-align: right;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .signature-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .signature-section p {
+            margin-bottom: 10px;
+        }
+
+        .signature-name {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-top: 20px;
+            text-transform: none;
+            letter-spacing: 1px;
+            font-style: normal;
+            line-height: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media print {
+            @page {
+                size: auto;
+                margin: 0;
+            }
+            body, h1, h2, h3, h4, h5, h6, p, li, a {
+                font-family: Arial, Helvetica, sans-serif !important;
+                color: #000 !important;
+                background: #fff !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+            body {
+                margin: 0;
+                width: 100%;
+                line-height: 1.4;
+                background: #fff !important;
+                padding: 0;
+            }
+            .header, .cover-letter-content {
+                background: #fff !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                border-top: 1px solid #000 !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-bottom: none !important;
+                padding: 10px !important;
+            }
+            .theme-switcher {
+                display: none !important;
+            }
+            .keyword {
+                background: none !important;
+                color: #000 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Adam Cruz</h1>
+        <h2>Cover Letter</h2>
+        <div class="contact-info">
+            <div>919 E Atkin Ave, Salt Lake City, UT 84106</div>
+            <div><a href="mailto:aec0713@westminsteru.edu">aec0713@westminsteru.edu</a>; (915) 487-7029</div>
+            <div><a href="https://www.linkedin.com/in/cruzadam91">LinkedIn</a>; <a href="https://github.com/cruzaddy91">GitHub</a></div>
+        </div>
+    </div>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn theme-btn-blue" onclick="setTheme('blue')" title="Blue Theme"></button>
+        <button class="theme-btn theme-btn-charcoal" onclick="setTheme('charcoal-bronze')" title="Charcoal Theme"></button>
+        <button class="theme-btn theme-btn-emerald" onclick="setTheme('emerald-gold')" title="Emerald Theme"></button>
+        <button class="theme-btn theme-btn-purple" onclick="setTheme('purple-silver')" title="Purple Theme"></button>
+        <button class="theme-btn theme-btn-crimson" onclick="setTheme('crimson-cream')" title="Crimson Theme"></button>
+    </div>
+
+    <div class="date-section">
+        July 7, 2025
+    </div>
+
+    <div class="cover-letter-content">
+        <p>Dear Hiring Manager,</p>
+
+        <p>I am writing to apply for the <span class="keyword">Software Engineer (Level 2/Junior Level)</span> position on your <span class="keyword">Automated Weight and Balance System (AWBS)</span> team. This role represents an ideal combination of my Computer Science studies with my aviation background from Purdue's Professional Flight program. I have always been passionate about both <span class="keyword">software engineering</span> and <span class="keyword">aircraft operations</span>, and this position allows me to apply my knowledge of <span class="keyword">weight and balance calculations</span> alongside my technical skills.</p>
+
+        <p>At Purdue, I gained hands-on experience with the systems your team develops. I completed courses in <span class="keyword">Aerospace Vehicle Systems Design, Analysis And Operations</span>, <span class="keyword">Turbine Aircraft Operations</span>, and <span class="keyword">Large Aircraft Systems</span>; these directly relate to what your AWBS team develops. As I complete my Computer Science degree at Westminster, I can see how software can make aircraft operations safer and more efficient.</p>
+
+        <p>In my current role at EnableCV, I work through the entire <span class="keyword">software development lifecycle</span>, from <span class="keyword">requirements analysis</span> and <span class="keyword">design documentation</span> to <span class="keyword">software development</span> and <span class="keyword">comprehensive testing</span>. I develop <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span> and create <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for our software. My work with <span class="keyword">API development</span>, <span class="keyword">system integration</span>, and <span class="keyword">database systems</span> aligns directly with what this role requires.</p>
+
+        <p>Throughout my time at Westminster, I have successfully balanced <span class="keyword">multiple part-time jobs</span> while maintaining <span class="keyword">Dean's List</span> status. This demonstrates my <span class="keyword">time management</span> and <span class="keyword">work ethic</span>; I know how to handle multiple responsibilities while maintaining high standards. I am committed to building my career here in Utah as a <span class="keyword">software engineering professional</span>.</p>
+
+        <p>What sets me apart is my operational aviation experience. As a <span class="keyword">Commercial Pilot</span> with <span class="keyword">Instrument Rating</span> and <span class="keyword">turbine aircraft operations</span> training, I have seen firsthand how critical accurate weight and balance calculations are for flight safety. My training in <span class="keyword">Aircraft Weight & Balance</span> and <span class="keyword">Center of Gravity Calculations</span> provides insights that most software engineers do not have. I can begin contributing to your AWBS team immediately.</p>
+
+        <p>I have always respected Lockheed Martin's leadership in aerospace technology. The opportunity to develop software that impacts <span class="keyword">aircraft flight readiness</span> and <span class="keyword">customer experience</span> worldwide is exactly what I want to do. Additionally, I plan to remain in Utah after graduation, so this represents a long-term opportunity for me to grow with your company.</p>
+
+        <p>My military experience as a <span class="keyword">Tactical Response Force Flight Chief</span> taught me the discipline and attention to detail needed for mission-critical systems. I understand <span class="keyword">security protocols</span>, <span class="keyword">system reliability</span>, and <span class="keyword">comprehensive testing</span>; these are crucial for aerospace software.</p>
+
+        <p>I am prepared to contribute to Lockheed Martin's mission of ensuring safety and addressing complex challenges. My combination of <span class="keyword">software engineering skills</span>, <span class="keyword">aviation domain knowledge</span>, and <span class="keyword">military discipline</span> makes me a strong fit for this role. I am confident I can be a valuable team member and help your AWBS platform succeed.</p>
+
+        <p>Thank you for considering my application. I would welcome the opportunity to discuss how I can contribute to your AWBS team.</p>
+
+                 <div class="signature-section">
+             <p>Sincerely,</p>
+             <p class="signature-name">Adam Cruz</p>
+         </div>
+    </div>
+
+    <script>
+        // Theme switching functionality
+        function setTheme(themeName) {
+            // Remove all existing theme classes
+            document.body.classList.remove('theme-blue', 'theme-charcoal-bronze', 'theme-emerald-gold', 'theme-purple-silver', 'theme-crimson-cream');
+            
+            // Add the selected theme class (charcoal is now default, so only add class for other themes)
+            if (themeName !== 'charcoal-bronze') {
+                document.body.classList.add('theme-' + themeName);
+            }
+            
+            // Store the theme preference in localStorage
+            localStorage.setItem('selectedTheme', themeName);
+            
+            // Update button states
+            updateButtonStates(themeName);
+        }
+        
+        function updateButtonStates(activeTheme) {
+            // Remove active state from all buttons
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active state to current theme button
+            const activeButton = document.querySelector(`[onclick="setTheme('${activeTheme}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+        
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'charcoal-bronze';
+            setTheme(savedTheme);
+        });
+    </script>
+</body>
+</html> 

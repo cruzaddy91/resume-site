@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Cruz - Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Custom Properties for Theme Colors */
+        :root {
+            /* Default Charcoal Theme */
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --text-light: #34495e;
+            --background-start: #f5f5f5;
+            --background-mid1: #e8e8e8;
+            --background-mid2: #d5d5d5;
+            --background-mid3: #c0c0c0;
+            --background-end: #a0a0a0;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8f8f8;
+            --card-bg-mid2: #f0f0f0;
+            --card-bg-mid3: #e8e8e8;
+            --card-bg-end: #d5d5d5;
+            --border-color: rgba(160, 160, 160, 0.3);
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+            --shadow-color: rgba(52, 73, 94, 0.4);
+            --shadow-color-dark: rgba(52, 73, 94, 0.6);
+        }
+
+        /* Theme Functions */
+        .theme-blue {
+            --primary-color: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --primary-light: #60a5fa;
+            --text-primary: #1e293b;
+            --text-secondary: #334155;
+            --text-tertiary: #475569;
+            --text-light: #64748b;
+            --background-start: #f8fafc;
+            --background-mid1: #e2e8f0;
+            --background-mid2: #cbd5e1;
+            --background-mid3: #94a3b8;
+            --background-end: #64748b;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8fafc;
+            --card-bg-mid2: #e2e8f0;
+            --card-bg-mid3: #cbd5e1;
+            --card-bg-end: #94a3b8;
+            --border-color: rgba(148, 163, 184, 0.3);
+            --highlight-bg: rgba(59, 130, 246, 0.15);
+            --highlight-border: #3b82f6;
+            --shadow-color: rgba(30, 41, 59, 0.4);
+            --shadow-color-dark: rgba(30, 41, 59, 0.6);
+        }
+
+        .theme-charcoal-bronze {
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --text-light: #34495e;
+            --background-start: #f5f5f5;
+            --background-mid1: #e8e8e8;
+            --background-mid2: #d5d5d5;
+            --background-mid3: #c0c0c0;
+            --background-end: #a0a0a0;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f8f8f8;
+            --card-bg-mid2: #f0f0f0;
+            --card-bg-mid3: #e8e8e8;
+            --card-bg-end: #d5d5d5;
+            --border-color: rgba(160, 160, 160, 0.3);
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+            --shadow-color: rgba(52, 73, 94, 0.4);
+            --shadow-color-dark: rgba(52, 73, 94, 0.6);
+        }
+
+        .theme-emerald-gold {
+            --primary-color: #059669;
+            --primary-dark: #047857;
+            --primary-light: #10b981;
+            --text-primary: #064e3b;
+            --text-secondary: #065f46;
+            --text-tertiary: #047857;
+            --text-light: #059669;
+            --background-start: #f0fdf4;
+            --background-mid1: #dcfce7;
+            --background-mid2: #bbf7d0;
+            --background-mid3: #86efac;
+            --background-end: #4ade80;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #f0fdf4;
+            --card-bg-mid2: #dcfce7;
+            --card-bg-mid3: #bbf7d0;
+            --card-bg-end: #86efac;
+            --border-color: rgba(5, 150, 105, 0.3);
+            --highlight-bg: rgba(5, 150, 105, 0.15);
+            --highlight-border: #059669;
+            --shadow-color: rgba(6, 78, 59, 0.4);
+            --shadow-color-dark: rgba(6, 78, 59, 0.6);
+        }
+
+        .theme-purple-silver {
+            --primary-color: #8b5cf6;
+            --primary-dark: #7c3aed;
+            --primary-light: #a78bfa;
+            --text-primary: #2e1065;
+            --text-secondary: #4c1d95;
+            --text-tertiary: #5b21b6;
+            --text-light: #6d28d9;
+            --background-start: #faf5ff;
+            --background-mid1: #f3e8ff;
+            --background-mid2: #e9d5ff;
+            --background-mid3: #d8b4fe;
+            --background-end: #c084fc;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #faf5ff;
+            --card-bg-mid2: #f3e8ff;
+            --card-bg-mid3: #e9d5ff;
+            --card-bg-end: #d8b4fe;
+            --border-color: rgba(139, 92, 246, 0.3);
+            --highlight-bg: rgba(139, 92, 246, 0.15);
+            --highlight-border: #8b5cf6;
+            --shadow-color: rgba(46, 16, 101, 0.4);
+            --shadow-color-dark: rgba(46, 16, 101, 0.6);
+        }
+
+        .theme-crimson-cream {
+            --primary-color: #dc2626;
+            --primary-dark: #b91c1c;
+            --primary-light: #ef4444;
+            --text-primary: #450a0a;
+            --text-secondary: #7f1d1d;
+            --text-tertiary: #991b1b;
+            --text-light: #b91c1c;
+            --background-start: #fef2f2;
+            --background-mid1: #fee2e2;
+            --background-mid2: #fecaca;
+            --background-mid3: #fca5a5;
+            --background-end: #f87171;
+            --card-bg-start: #ffffff;
+            --card-bg-mid1: #fef2f2;
+            --card-bg-mid2: #fee2e2;
+            --card-bg-mid3: #fecaca;
+            --card-bg-end: #fca5a5;
+            --border-color: rgba(220, 38, 38, 0.3);
+            --highlight-bg: rgba(220, 38, 38, 0.15);
+            --highlight-border: #dc2626;
+            --shadow-color: rgba(69, 10, 10, 0.4);
+            --shadow-color-dark: rgba(69, 10, 10, 0.6);
+        }
+
+        /* Theme Switcher Buttons */
+        .theme-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .theme-switcher:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .theme-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        .theme-btn.active {
+            transform: scale(1.15);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-btn-blue {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .theme-btn-charcoal {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+
+        .theme-btn-emerald {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .theme-btn-purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .theme-btn-crimson {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .theme-btn::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .theme-btn.active::after {
+            opacity: 1;
+        }
+
+        /* Apply CSS Variables to Existing Styles */
+        body {
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-mid1) 25%, var(--background-mid2) 50%, var(--background-mid3) 75%, var(--background-end) 100%);
+            font-family: 'Inter', 'Montserrat', Arial, sans-serif;
+            margin: 20px auto;
+            line-height: 1.4;
+            color: var(--text-primary);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1400px;
+            padding: 10px;
+            min-height: 100vh;
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 0 15px;
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            border-radius: 12px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 
+                0 50px 100px -25px rgba(0, 0, 0, 0.6),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 10px 20px -5px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.3),
+                inset 0 3px 0 rgba(255, 255, 255, 0.4);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.6s ease-out;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .header:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-top: 4px solid var(--primary-dark);
+            box-shadow: 
+                0 70px 140px -30px rgba(0, 0, 0, 0.8),
+                0 35px 70px -15px rgba(0, 0, 0, 0.6),
+                0 15px 30px -8px rgba(0, 0, 0, 0.4),
+                0 0 0 2px rgba(255, 255, 255, 0.4),
+                inset 0 3px 0 rgba(255, 255, 255, 0.5);
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+        .header-left {
+            text-align: left;
+            position: relative;
+            z-index: 1;
+        }
+        .header-right {
+            text-align: right;
+            position: relative;
+            z-index: 1;
+        }
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 56px;
+            color: var(--text-primary);
+            margin: 0;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.15),
+                0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: none;
+            line-height: 1.1;
+            text-transform: uppercase;
+            font-variant: small-caps;
+            letter-spacing: 1px;
+            position: relative;
+            font-weight: 700;
+        }
+        .header h1::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-color) 25%, var(--primary-light) 50%, var(--primary-color) 75%, transparent 100%);
+            border-radius: 1px;
+            opacity: 0.7;
+        }
+        .header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-color) 50%, transparent 100%);
+            border-radius: 1px;
+            opacity: 0.5;
+        }
+        .header h1 br {
+            display: block;
+            content: "";
+        }
+        .header h2 {
+            font-size: 18px;
+            color: var(--text-tertiary);
+            margin: 8px 0 0 0;
+            border-bottom: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+        .header h2::before {
+            content: '✦';
+            margin-right: 8px;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        .header h2::after {
+            content: '✦';
+            margin-left: 8px;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+        .contact-info {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin: 25px 0 0 0;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+            position: relative;
+        }
+        .contact-info a:hover {
+            color: var(--primary-dark);
+            text-decoration: none;
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+        .contact-info a::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .contact-info a:hover::after {
+            width: 100%;
+        }
+        .contact-info .contact-line {
+            margin-bottom: 4px;
+        }
+        
+        .contact-info .contact-line:first-child {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .contact-info .contact-line:nth-child(2) {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+        
+        .contact-info .contact-line:last-child {
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-tertiary);
+        }
+        .left-column {
+            flex: 1;
+            max-width: 320px;
+            margin-right: 20px;
+            border-right: 2px solid var(--primary-color);
+            padding-right: 20px;
+        }
+        .right-column {
+            flex: 3;
+            max-width: 900px;
+        }
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: var(--text-primary);
+            border-bottom: 3px double var(--primary-color);
+            padding-bottom: 3px;
+            margin-top: 20px;
+            text-shadow: 
+                0 4px 8px rgba(0, 0, 0, 0.25),
+                0 8px 16px rgba(0, 0, 0, 0.15),
+                0 2px 4px rgba(0, 0, 0, 0.2);
+            position: relative;
+            font-weight: 700;
+        }
+        h2::before {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
+            border-radius: 2px;
+            box-shadow: 0 6px 18px var(--primary-color);
+        }
+        .section-content {
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            padding: 15px 25px;
+            border-radius: 12px;
+            border-top: 3px solid var(--primary-color);
+            box-shadow: 
+                0 35px 70px -15px var(--shadow-color),
+                0 20px 40px -10px rgba(0, 0, 0, 0.3),
+                0 10px 20px -5px rgba(0, 0, 0, 0.2),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                inset 0 3px 0 rgba(255, 255, 255, 0.95);
+            margin-bottom: 18px;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .section-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+        .section-content:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-top: 3px solid var(--primary-dark);
+            box-shadow: 
+                0 50px 100px -20px var(--shadow-color-dark),
+                0 25px 50px -12px rgba(0, 0, 0, 0.4),
+                0 15px 30px -8px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.25),
+                inset 0 3px 0 rgba(255, 255, 255, 0.98);
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 8px;
+            color: #1e293b;
+            background-color: transparent;
+            position: relative;
+            z-index: 1;
+        }
+        li {
+            padding-left: 0.8em;
+            margin-bottom: 8px;
+            list-style-position: inside;
+            color: #1e293b;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.4;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        li:hover {
+            transform: translateX(4px);
+        }
+        .right-column li {
+            color: #334155;
+            background: none;
+            -webkit-background-clip: unset;
+            -webkit-text-fill-color: unset;
+        }
+        ul li::marker {
+            display: none;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+            text-shadow: 0 0 8px var(--primary-color);
+        }
+        li::before {
+            content: '\25C6'; /* Unicode for a filled diamond/rhombus */
+            color: var(--primary-color);
+            font-size: 1em;
+            position: absolute;
+            left: 0;
+            top: -0.1em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        li:hover::before {
+            color: var(--primary-dark);
+            transform: scale(1.2);
+        }
+        .left-column ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li::after {
+            content: none;
+        }
+        .left-column li {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+        .left-column li strong {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+        .left-column li em {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+        .keyword {
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: var(--highlight-bg);
+            padding: 1px 4px;
+            border-radius: 3px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 2px solid var(--highlight-border);
+        }
+        .keyword:hover {
+            background: var(--highlight-bg);
+            color: var(--text-primary);
+            transform: scale(1.05);
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0%, 100% { 
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% { 
+                transform: scale(1.05);
+                opacity: 0.6;
+            }
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .section-content {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .section-content:nth-child(1) { animation-delay: 0.1s; }
+        .section-content:nth-child(2) { animation-delay: 0.2s; }
+        .section-content:nth-child(3) { animation-delay: 0.3s; }
+        .section-content:nth-child(4) { animation-delay: 0.4s; }
+        .section-content:nth-child(5) { animation-delay: 0.5s; }
+        
+        @media print {
+            @page {
+                size: auto;
+                margin: 0;
+            }
+            body, h1, h2, h3, h4, h5, h6, p, li, a {
+                font-family: Arial, Helvetica, sans-serif !important;
+                color: #000 !important;
+                background: #fff !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
+            }
+            body {
+                margin: 0;
+                width: 100%;
+                line-height: 1.4;
+                background: #fff !important;
+                padding: 0;
+            }
+            .header, .section-content, .reference-card, .certification-group {
+                background: #fff !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                border-top: 1px solid #000 !important;
+                border-left: none !important;
+                border-right: none !important;
+                border-bottom: none !important;
+                padding: 10px !important;
+            }
+            .header, .left-column, .right-column {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            h2 {
+                font-size: 1.2em;
+                border-bottom: 1px solid #000;
+                padding-bottom: 2px;
+                margin-top: 20px;
+                background: #fff !important;
+                color: #000 !important;
+            }
+            ul {
+                padding-left: 20px;
+                list-style-type: disc;
+                background: #fff !important;
+            }
+            li {
+                padding-left: 0;
+                margin-bottom: 5px;
+                list-style-position: inside;
+                background: #fff !important;
+            }
+            li::before, li::after, .keyword, .highlight {
+                content: none !important;
+                background: none !important;
+                color: #000 !important;
+                border: none !important;
+                box-shadow: none !important;
+            }
+            .theme-switcher {
+                display: none !important;
+            }
+            .portfolio-button {
+                background: #fff !important;
+                color: #000 !important;
+                border: 1px solid #000 !important;
+                box-shadow: none !important;
+            }
+            .job-divider, .reference-divider, .reference-card::before, .reference-card::after, .certification-group::before {
+                display: none !important;
+            }
+        }
+        
+        /* Reference Cards */
+        .reference-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        
+        .reference-card {
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            border-radius: 10px;
+            padding: 15px;
+            border-top: 2px solid var(--primary-color);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 
+                0 25px 50px -12px var(--shadow-color),
+                0 15px 30px -8px rgba(0, 0, 0, 0.25),
+                0 8px 16px -4px rgba(0, 0, 0, 0.15),
+                0 0 0 2px rgba(255, 255, 255, 0.2),
+                inset 0 3px 0 rgba(255, 255, 255, 0.95);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .reference-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .reference-card:hover::before {
+            left: 100%;
+        }
+        
+        .reference-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 10px;
+            pointer-events: none;
+        }
+        
+        .reference-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            border-top: 2px solid var(--primary-dark);
+            box-shadow: 
+                0 35px 70px -15px var(--shadow-color-dark),
+                0 20px 40px -10px rgba(0, 0, 0, 0.4),
+                0 12px 24px -6px rgba(0, 0, 0, 0.3),
+                0 0 0 2px rgba(255, 255, 255, 0.25),
+                inset 0 3px 0 rgba(255, 255, 255, 0.98);
+            border-color: var(--primary-color);
+        }
+        
+        .reference-card p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            line-height: 1.4;
+            font-size: 13px;
+        }
+        
+        .reference-role {
+            color: #1d4ed8;
+            font-style: italic;
+            font-weight: 500;
+        }
+        
+        /* Reference Dividers */
+        .reference-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 20px 0 15px 0;
+            position: relative;
+        }
+        
+        .reference-divider h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0 15px;
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            display: inline-block;
+            border-radius: 6px;
+            border-top: 2px solid var(--primary-color);
+            box-shadow: 
+                0 4px 12px var(--shadow-color),
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .reference-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-color) 20%, var(--primary-light) 50%, var(--primary-color) 80%, transparent 100%);
+            z-index: 1;
+        }
+        
+        /* Certification Groups */
+        .certification-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .certification-group {
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            border-radius: 8px;
+            padding: 12px;
+            border-top: 2px solid var(--primary-color);
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 
+                0 8px 16px var(--shadow-color),
+                0 4px 8px rgba(0, 0, 0, 0.05),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification-group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 8px;
+            pointer-events: none;
+        }
+        
+        .certification-group:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 12px 24px var(--shadow-color-dark),
+                0 6px 12px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border-top: 2px solid var(--primary-dark);
+        }
+        
+        .certification-group h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--text-primary);
+            margin: 0 0 8px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--primary-color);
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+        
+        .certification-group ul {
+            margin: 0;
+            padding-left: 0;
+        }
+        
+        .certification-group li {
+            font-size: 12px;
+            margin-bottom: 6px;
+            padding-left: 1.2em;
+            position: relative;
+        }
+        
+        .certification-group li strong {
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+        
+        .certification-group li em {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+        
+        .certification-group li::before {
+            content: '\25C6'; /* Unicode for a filled diamond/rhombus */
+            color: var(--primary-color);
+            font-size: 0.9em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .certification-group li:hover::before {
+            color: var(--primary-dark);
+            transform: scale(1.2);
+        }
+
+        .section-content p strong {
+            font-size: 18px;
+            color: var(--text-primary);
+            font-weight: 700;
+            margin-bottom: 0px;
+            display: inline;
+        }
+        
+        .degree-line {
+            white-space: nowrap;
+            display: block;
+        }
+        
+        .job-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--primary-color) 25%, var(--primary-light) 50%, var(--primary-color) 75%, transparent 100%);
+            margin: 15px 0;
+            border-radius: 1px;
+            box-shadow: 0 2px 4px var(--primary-color);
+        }
+        
+        .portfolio-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            position: relative;
+            overflow: hidden;
+            vertical-align: middle;
+            box-shadow: 
+                0 4px 8px var(--primary-color),
+                0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .portfolio-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .portfolio-button:hover::before {
+            left: 100%;
+        }
+        
+        .portfolio-button:hover {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--primary-dark) 100%);
+            color: #ffffff;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 16px var(--primary-color),
+                0 4px 8px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 16px;
+            margin-bottom: 2px;
+            font-family: 'Playfair Display', serif;
+        }
+        .company-name {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+        .date-location {
+            color: var(--text-tertiary);
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+        .job-description {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+        .job-description:last-child {
+            margin-bottom: 0;
+        }
+        .job-description strong {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .highlight {
+            background: var(--highlight-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-left: 2px solid var(--highlight-border);
+        }
+
+        .header-content {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="contact-info">
+                    <div class="contact-line">919 E Atkin Ave, Salt Lake City, UT 84106</div>
+                    <div class="contact-line"><a href="mailto:aec0713@westminsteru.edu">aec0713@westminsteru.edu</a> | (915) 487-7029</div>
+                    <div class="contact-line"><a href="https://www.linkedin.com/in/cruzadam91">LinkedIn</a> | <a href="https://github.com/cruzaddy91">GitHub</a></div>
+                </div>
+            </div>
+            <div class="header-right">
+                <h1>Adam Cruz</h1>
+                <h2>Computer Science Student<br>with a Data Science Minor</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Switcher -->
+    <div class="theme-switcher">
+        <button class="theme-btn theme-btn-blue" onclick="setTheme('blue')" title="Blue Theme"></button>
+        <button class="theme-btn theme-btn-charcoal" onclick="setTheme('charcoal-bronze')" title="Charcoal Theme"></button>
+        <button class="theme-btn theme-btn-emerald" onclick="setTheme('emerald-gold')" title="Emerald Theme"></button>
+        <button class="theme-btn theme-btn-purple" onclick="setTheme('purple-silver')" title="Purple Theme"></button>
+        <button class="theme-btn theme-btn-crimson" onclick="setTheme('crimson-cream')" title="Crimson Theme"></button>
+    </div>
+
+    <div class="left-column">
+        <h2>Skills</h2>
+        <div class="section-content">
+            <ul>
+                <li><strong>Software Development:</strong> <em><span class="keyword">Java Programming</span>, <span class="keyword">C# Development</span>, <span class="keyword">Object-Oriented Design</span>, <span class="keyword">Software Engineering</span>, <span class="keyword">System Design</span>, <span class="keyword">API Development</span>, <span class="keyword">Web Applications</span></em></li>
+                <li><strong>Software Development Lifecycle:</strong> <em><span class="keyword">Requirements Analysis</span>, <span class="keyword">Design Documentation</span>, <span class="keyword">Software Development</span>, <span class="keyword">Testing & Quality Assurance</span>, <span class="keyword">System Integration</span>, <span class="keyword">Technical Documentation</span></em></li>
+                <li><strong>Testing & Quality Assurance:</strong> <em><span class="keyword">Test Planning</span>, <span class="keyword">Test Procedures</span>, <span class="keyword">Software Testing</span>, <span class="keyword">Quality Assurance</span>, <span class="keyword">System Validation</span>, <span class="keyword">Performance Testing</span>, <span class="keyword">Integration Testing</span></em></li>
+                <li><strong>Programming Languages:</strong> <em><span class="keyword">Java</span>, <span class="keyword">C#</span>, Python, JavaScript, TypeScript, C, HTML, CSS</em></li>
+                <li><strong>Database & Data Management:</strong> <em><span class="keyword">SQL</span>, <span class="keyword">Database Systems</span>, <span class="keyword">Data Analysis</span>, <span class="keyword">Database Integration</span>, <span class="keyword">Web Services</span></em></li>
+                <li><strong>Development Tools:</strong> <em><span class="keyword">Git</span>, <span class="keyword">GitHub</span>, <span class="keyword">VS Code</span>, <span class="keyword">IntelliJ IDEA</span>, <span class="keyword">Docker</span>, <span class="keyword">Postman</span>, <span class="keyword">Pytest</span></em></li>
+                <li><strong>Aviation & Aerospace:</strong> <em><span class="keyword">Aircraft Weight & Balance</span>, <span class="keyword">Turbine Aircraft Operations</span>, <span class="keyword">Flight Management Systems</span>, <span class="keyword">Aviation Operations</span>, <span class="keyword">Center of Gravity Calculations</span></em></li>
+                <li><strong>Military & Security:</strong> <em><span class="keyword">Security Systems</span>, <span class="keyword">Access Control</span>, <span class="keyword">System Integration</span>, <span class="keyword">Security Protocols</span>, <span class="keyword">Military Aircraft</span>, <span class="keyword">Security Operations</span></em></li>
+                <li><strong>Professional Skills:</strong> <em><span class="keyword">Agile Methodologies</span>, <span class="keyword">Team Collaboration</span>, <span class="keyword">Customer Collaboration</span>, <span class="keyword">Technical Communication</span>, <span class="keyword">Problem Solving</span>, <span class="keyword">Leadership</span>, <span class="keyword">Project Management</span></em></li>
+            </ul>
+        </div>
+
+        <h2>Certifications</h2>
+        <div class="section-content">
+            <div class="certification-container">
+                <div class="certification-group">
+                    <h4>In Progress</h4>
+                    <ul>
+                        <li><strong>AWS Cloud Practitioner</strong><br><em>In Progress</em></li>
+                        <li><strong>CompTIA Security+</strong><br><em>In Progress</em></li>
+                        <li><strong>CompTIA A+</strong><br><em>In Progress</em></li>
+                    </ul>
+                </div>
+
+                <div class="certification-group">
+                    <h4>Healthcare & Safety</h4>
+                    <ul>
+                        <li><strong>CPR/AED</strong><br><em>American Red Cross - Feb 2024 - Feb 2026</em></li>
+                        <li><strong>Pharmacy Technician License</strong><br><em>Indiana Board of Pharmacy - Jul 2021</em></li>
+                    </ul>
+                </div>
+
+                <div class="certification-group">
+                    <h4>Aviation</h4>
+                    <ul>
+                        <li><strong>Commercial Pilot Certificate</strong><br><em>FAA - May 2019</em></li>
+                        <li><strong>Instrument Rating</strong><br><em>FAA - Nov 2018</em></li>
+                        <li><strong>Complex Aircraft Endorsement</strong><br><em>FAA - Jul 2017</em></li>
+                        <li><strong>Private Pilot Certificate</strong><br><em>FAA - Oct 2015</em></li>
+                    </ul>
+                </div>
+
+                <div class="certification-group">
+                    <h4>Fitness & Training</h4>
+                    <ul>
+                        <li><strong>ACE CPT Certification</strong><br><em>Aug 2016</em></li>
+                        <li><strong>USAW Level 1</strong><br><em>Aug 2015</em></li>
+                        <li><strong>CrossFit Level 1</strong><br><em>Dec 2015</em></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2>Languages</h2>
+        <div class="section-content">
+            <ul>
+                <li><strong>English</strong> - Native</li>
+                <li><strong>Spanish</strong> - Native</li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="section">
+            <h2>Professional Summary</h2>
+            <div class="section-content">
+                <p>Computer Science student with specialized experience in <span class="keyword">software development</span>, <span class="keyword">system testing</span>, and <span class="keyword">quality assurance</span>, combined with extensive aviation background from Purdue University's Professional Flight program. Proven track record in <span class="keyword">full software development lifecycle</span> including requirements analysis, design documentation, development, and comprehensive testing. Experienced in <span class="keyword">Java programming</span>, <span class="keyword">database systems</span>, and <span class="keyword">web application development</span> with strong foundation in <span class="keyword">object-oriented design</span> and <span class="keyword">software engineering principles</span>. Demonstrated ability to handle <span class="keyword">complex system integration</span>, <span class="keyword">API development</span>, and <span class="keyword">technical documentation</span> for enterprise solutions. Unique combination of <span class="keyword">aviation operations knowledge</span> including aircraft weight and balance calculations, turbine aircraft operations, and flight management systems, with <span class="keyword">software engineering expertise</span>. Seeking opportunities in Software Engineering roles where I can leverage my technical skills and aviation domain knowledge to contribute to aerospace software solutions, particularly in weight and balance systems and flight operations software.</p>
+                <p><em>This resume was personally crafted using an HTML/CSS formatting framework to ensure a modern and professional presentation.</em></p>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Education</h2>
+            <div class="section-content">
+                <p class="degree-line"><strong>Bachelor of Science in Computer Science</strong>, Minor in Data Science<br>
+                <em>Westminster University</em>, <em>Salt Lake City, UT</em> | <em>Aug 2023 - May 2026 (Expected Graduation Date)</em><br>
+                <strong>Academic Excellence:</strong> <span class="keyword">3.6 GPA</span> | <span class="keyword">Dean's List</span></p>
+                <ul>
+                    <li>Relevant Coursework: Functional Programming, Database Systems, Software Engineering, Data Structures & Algorithms, Computer Systems & Programming, Operating Systems, Artificial Intelligence, Statistical Modeling, Statistical Analysis</li>
+                    <li>Computer Science & Data Science Tutor</li>
+                    <li>Supplemental Instructor for CMPT 215 (Introduction to Computer Science)</li>
+                </ul>
+                <p><strong>Bachelor of Science in Aviation Management</strong><br>
+                <em>Purdue University</em>, <em>West Lafayette, IN</em> | <em>Aug 2015 - May 2020</em></p>
+                <ul>
+                    <li>Relevant Coursework: Aerospace Vehicle Systems Design, Analysis And Operations, Turbine Flight Operations Lecture, Large Aircraft Systems, Aerospace Vehicle Propulsion And Tracking Systems, Advanced Transport Flight Operations, Turbine Aircraft Simulation Lab, Transport Aircraft Simulation Laboratory, Aviation Operations Management, Human Factors For Flight Crews, Aviation Command Leadership, Private Pilot Lecture, Private Pilot Flight, Commercial Pilot Lecture, Commercial Pilot Flight, Instrument Pilot Lecture, Instrument Pilot Flight</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Technical Experience</h2>
+            <div class="section-content">
+                <p><strong>IT Intern</strong><br>
+                <em>EnableCV</em> - <em>Midvale, UT</em> | <em>2024 - Present</em></p>
+                <ul>
+                    <li>Designing and implementing <span class="keyword">software solutions</span> with <span class="keyword">full software development lifecycle</span> involvement including <span class="keyword">requirements analysis</span>, <span class="keyword">design documentation</span>, <span class="keyword">software development</span>, and <span class="keyword">comprehensive testing</span></li>
+                    <li>Developing <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span>, HTML5, and CSS3 with <span class="keyword">object-oriented design</span> principles and <span class="keyword">responsive design</span> for cross-platform compatibility</li>
+                    <li>Creating comprehensive <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for <span class="keyword">software applications</span>, implementing <span class="keyword">quality assurance</span> methodologies and <span class="keyword">system validation</span> processes</li>
+                    <li>Managing <span class="keyword">API development</span> and <span class="keyword">system integration</span> between multiple services, ensuring <span class="keyword">database integration</span> and <span class="keyword">web services</span> functionality</li>
+                    <li>Implementing <span class="keyword">security protocols</span> and <span class="keyword">access control</span> systems, maintaining <span class="keyword">system reliability</span> and <span class="keyword">data integrity</span> for enterprise solutions</li>
+                    <li>Conducting <span class="keyword">performance testing</span> and <span class="keyword">integration testing</span> to ensure <span class="keyword">software quality</span> and <span class="keyword">system reliability</span></li>
+                    <li>Creating comprehensive <span class="keyword">technical documentation</span> including <span class="keyword">API specifications</span>, <span class="keyword">integration maps</span>, and <span class="keyword">user training</span> materials</li>
+                    <li>Collaborating with <span class="keyword">customers</span> and <span class="keyword">stakeholders</span> to gather <span class="keyword">software requirements</span> and ensure <span class="keyword">customer satisfaction</span> with delivered solutions</li>
+                    <li>Utilizing <span class="keyword">agile methodologies</span> and <span class="keyword">team collaboration</span> to coordinate <span class="keyword">integrated testing activities</span> with software engineers and management</li>
+                    <li>Developing <span class="keyword">database systems</span> and <span class="keyword">SQL queries</span> for complex business logic, implementing <span class="keyword">data analysis</span> and <span class="keyword">reporting solutions</span></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Computer Science & Data Science Tutor</strong><br>
+                <em>Westminster University</em> - <em>Salt Lake City, UT</em> | <em>2023 - Present</em></p>
+                <ul>
+                    <li>Provide technical support and <span class="keyword">troubleshooting</span> for hardware and software issues</li>
+                    <li>Assist students with <span class="keyword">data analysis</span> projects using Python, R, and statistical modeling techniques</li>
+                    <li>Guide students in creating <span class="keyword">data visualizations</span> and interactive dashboards for academic projects</li>
+                    <li>Support <span class="keyword">database design</span> and SQL query optimization for student projects</li>
+                    <li>Implement <span class="keyword">security protocols</span> and maintain system integrity</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Supplemental Instructor</strong><br>
+                <em>Westminster University</em> - <em>Salt Lake City, UT</em> | <em>2023 - Present</em></p>
+                <ul>
+                    <li>Lead technical workshops on <span class="keyword">data visualization</span> and <span class="keyword">analytics</span> tools including Python libraries and statistical software</li>
+                    <li>Develop and maintain <span class="keyword">documentation</span> for technical procedures and best practices</li>
+                    <li>Implement and <span class="keyword">troubleshoot</span> various software platforms and tools</li>
+                    <li>Monitor system <span class="keyword">performance</span> and resolve technical issues</li>
+                    <li>Provide training on <span class="keyword">data analysis</span> techniques and <span class="keyword">statistical modeling</span> for students and faculty</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Inpatient Hospital Pharmacy Technician</strong><br>
+                <em>Indiana University Health</em> - <em>Indianapolis, IN</em> | <em>2022 - 2023</em></p>
+                <ul>
+                    <li>Managed and maintained complex healthcare information systems</li>
+                    <li>Implemented system improvements and <span class="keyword">security protocols</span></li>
+                    <li>Provided technical support and training for system users</li>
+                    <li><span class="keyword">Documented</span> procedures and maintained accurate system records</li>
+                    <li>Collaborated with IT teams to ensure system reliability and <span class="keyword">security</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Military Experience</h2>
+            <div class="section-content">
+                <p><strong>Tactical Response Force Flight Chief</strong><br>
+                <em>United States Air Force</em> | <em>2012 - 2015</em></p>
+                <ul>
+                    <li>Led and coordinated complex <span class="keyword">security operations</span>, demonstrating strong leadership and decision-making abilities</li>
+                    <li>Managed critical <span class="keyword">information systems</span> and <span class="keyword">security protocols</span>, ensuring data integrity and system reliability</li>
+                    <li>Developed and implemented <span class="keyword">standard operating procedures</span> for security operations and emergency response</li>
+                    <li>Conducted regular <span class="keyword">system audits</span> and <span class="keyword">security assessments</span> to maintain operational readiness</li>
+                    <li>Trained and mentored team members in <span class="keyword">security protocols</span> and <span class="keyword">technical procedures</span></li>
+                    <li>Translated complex <span class="keyword">security protocols</span> and <span class="keyword">technical procedures</span> into clear, actionable instructions for diverse team members</li>
+                    <li>Demonstrated exceptional attention to detail in <span class="keyword">security assessments</span>, <span class="keyword">documentation</span>, and <span class="keyword">compliance reporting</span></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Flight Security Controller</strong><br>
+                <em>United States Air Force</em> | <em>2011 - 2012</em></p>
+                <ul>
+                    <li>Monitored and maintained <span class="keyword">security systems</span> and <span class="keyword">access control databases</span></li>
+                    <li>Coordinated with multiple departments to ensure <span class="keyword">system integration</span> and data accuracy</li>
+                    <li>Implemented <span class="keyword">security protocols</span> and maintained detailed <span class="keyword">documentation</span> of procedures</li>
+                    <li>Conducted regular <span class="keyword">system maintenance</span> and <span class="keyword">troubleshooting</span> of security equipment</li>
+                    <li>Managed <span class="keyword">access control systems</span> and user permissions</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Projects</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Software Development & Testing Platform:</strong> Comprehensive <span class="keyword">software development</span> project demonstrating <span class="keyword">full software development lifecycle</span> including <span class="keyword">requirements analysis</span>, <span class="keyword">design documentation</span>, <span class="keyword">software development</span>, and <span class="keyword">comprehensive testing</span>. Developed <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span>, HTML5, and CSS3 with <span class="keyword">object-oriented design</span> principles. Implemented <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for <span class="keyword">software applications</span>, ensuring <span class="keyword">quality assurance</span> and <span class="keyword">system validation</span>. Created comprehensive <span class="keyword">technical documentation</span> and <span class="keyword">user training</span> materials. Built with modern <span class="keyword">web technologies</span> and <span class="keyword">database systems</span>. <a href="https://ecv-internportfolio2025.netlify.app" target="_blank" class="portfolio-button">View Project Portfolio</a></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Database Integration & Web Services Platform:</strong> Enterprise solution demonstrating <span class="keyword">database integration</span> and <span class="keyword">web services</span> development. Implemented <span class="keyword">API development</span> and <span class="keyword">system integration</span> between multiple services. Developed <span class="keyword">SQL queries</span> for complex business logic and <span class="keyword">data analysis</span>. Created <span class="keyword">automated reports</span> and <span class="keyword">interactive dashboards</span> with <span class="keyword">performance testing</span> and <span class="keyword">integration testing</span>. Built with <span class="keyword">database systems</span>, <span class="keyword">web services</span>, and advanced <span class="keyword">data modeling</span> techniques. <a href="https://ecv-internportfolio2025.netlify.app" target="_blank" class="portfolio-button">View Project Portfolio</a></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Mathsprout:</strong> Interactive <span class="keyword">web application</span> for tracking student progress. Demonstrated strong technical <span class="keyword">problem-solving</span> skills through <span class="keyword">system design</span> and implementation. Created comprehensive <span class="keyword">technical documentation</span> and user guides. Implemented secure user <span class="keyword">authentication</span> and <span class="keyword">data management systems</span>. Built with modern <span class="keyword">web technologies</span> including HTML5, CSS3, and <span class="keyword">JavaScript</span>.</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Weather App:</strong> Full stack <span class="keyword">web application</span> providing real-time weather data. Showcased ability to work with <span class="keyword">complex systems</span> and <span class="keyword">API development</span>. Implemented robust error handling and <span class="keyword">system monitoring</span>. Created detailed <span class="keyword">technical documentation</span> and user guides. Developed with focus on <span class="keyword">system reliability</span> and <span class="keyword">performance optimization</span>.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section">
+            <h2>Additional Information</h2>
+            <div class="section-content">
+                <p><strong>Military Achievements</strong></p>
+                <ul>
+                    <li>USAF Commendation Medal, Good Conduct Medal, Humanitarian Medal</li>
+                    <li>NCO Academy Graduate, Airman Leadership School Graduate</li>
+                    <li>Global Strike Command <span class="keyword">Assaulter School</span> Graduate, Global Strike Command Winter Warrior Graduate</li>
+                    <li>Global Strike Command <span class="keyword">Nuclear Integration Course</span> for Leaders Graduate</li>
+                </ul>
+
+                <p><strong>Athletic Achievements</strong></p>
+                <ul>
+                    <li>USAW University Nationals Competitor (2017-2019)</li>
+                    <li>USAW American Open Series Competitor (2021-2023)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>References</h2>
+            <div class="section-content">
+                <div class="reference-container">
+                    <div class="reference-divider">
+                        <h3>Academic Advisors</h3>
+                    </div>
+                    
+                    <div class="reference-card">
+                        <p><strong>Kathryn Lenth, Ph.D</strong><br>
+                        <em>Associate Professor, Computer Science</em><br>
+                        <span class="reference-role">Academic Advisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322317">(801) 832-2317</a><br>
+                        <a href="mailto:klenth@westminsteru.edu">klenth@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Jingsai Liang, Ph.D</strong><br>
+                        <em>Department Chair, Data Science<br>Associate Professor, Computer & Data Science</em><br>
+                        <span class="reference-role">Academic Advisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322421">(801) 832-2421</a><br>
+                        <a href="mailto:jliang@westminsteru.edu">jliang@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-divider">
+                        <h3>Direct Supervisors</h3>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Traci Siriprathane, MS</strong><br>
+                        <em>Assistant Dean of Students<br>Director of Student Wellbeing & Support</em><br>
+                        <span class="reference-role">Direct Supervisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322862">(801) 832-2862</a><br>
+                        <a href="mailto:tsiriprathane@westminsteru.edu">tsiriprathane@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Janine Wittwer, Ph.D</strong><br>
+                        <em>Professor, Mathematics</em><br>
+                        <span class="reference-role">Direct Supervisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322404">(801) 832-2404</a><br>
+                        <a href="mailto:jwittwer@westminsteru.edu">jwittwer@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-divider">
+                        <h3>Professional References</h3>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Helen Hu, Ph.D</strong><br>
+                        <em>Department Chair & Professor, Computer Science</em><br>
+                        Westminster University<br>
+                        <a href="tel:8018322362">(801) 832-2362</a><br>
+                        <a href="mailto:hhu@westminsteru.edu">hhu@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Greg Gagne, MS</strong><br>
+                        <em>Professor, Computer Science</em><br>
+                        Westminster University<br>
+                        <a href="tel:8018322361">(801) 832-2361</a><br>
+                        <a href="mailto:ggagne@westminsteru.edu">ggagne@westminsteru.edu</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme switching functionality
+        function setTheme(themeName) {
+            // Remove all existing theme classes
+            document.body.classList.remove('theme-blue', 'theme-charcoal-bronze', 'theme-emerald-gold', 'theme-purple-silver', 'theme-crimson-cream');
+            
+            // Add the selected theme class (charcoal is now default, so only add class for other themes)
+            if (themeName !== 'charcoal-bronze') {
+                document.body.classList.add('theme-' + themeName);
+            }
+            
+            // Store the theme preference in localStorage
+            localStorage.setItem('selectedTheme', themeName);
+            
+            // Update button states
+            updateButtonStates(themeName);
+        }
+        
+        function updateButtonStates(activeTheme) {
+            // Remove active state from all buttons
+            document.querySelectorAll('.theme-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Add active state to current theme button
+            const activeButton = document.querySelector(`[onclick="setTheme('${activeTheme}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+        }
+        
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'charcoal-bronze';
+            setTheme(savedTheme);
+        });
+    </script>
+</body>
+</html> 
