@@ -169,7 +169,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For questions or support, please contact:
-- Email: [your.email@example.com]
+- Email: [aec0713@westminsteru.edu]
 - LinkedIn: [your LinkedIn profile]
 - GitHub: [your GitHub profile]
 
