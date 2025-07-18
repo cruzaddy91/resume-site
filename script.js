@@ -288,4 +288,16 @@ style.textContent = `
         opacity: 0.8;
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Form submission handling
+document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.querySelector('form[name="contact"]');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Let Netlify handle the form submission
+            // The form will redirect to success.html after submission
+            showNotification('Sending your message...', 'info');
+        });
+    }
+}); 
