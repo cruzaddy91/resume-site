@@ -87,6 +87,7 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: transform 0.3s ease;
+    white-space: nowrap;
 }
 
 .resume-btn:hover {
@@ -538,6 +539,14 @@ section {
         left: 0;
     }
 
+    .nav-menu .resume-btn {
+        margin: 0.5rem auto;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        max-width: 200px;
+        width: 100%;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
@@ -550,6 +559,13 @@ section {
 
     .hero-buttons {
         justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+
+    .hero-buttons .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.5rem;
     }
 
     .about-content {
@@ -601,6 +617,22 @@ section {
     .btn {
         width: 100%;
         max-width: 250px;
+        font-size: 0.85rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .nav-menu .resume-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-menu .resume-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        max-width: 160px;
     }
 }
 
