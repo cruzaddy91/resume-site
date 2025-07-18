@@ -298,5 +298,30 @@ document.addEventListener('DOMContentLoaded', () => {
             showNotification('Sending your message...', 'info');
         });
     }
+    
+    // Image protection
+    const profileImage = document.querySelector('.profile-image');
+    if (profileImage) {
+        // Disable right-click context menu
+        profileImage.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Disable drag and drop
+        profileImage.addEventListener('dragstart', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Disable keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            // Prevent Ctrl+S, Ctrl+U, F12
+            if ((e.ctrlKey && (e.key === 's' || e.key === 'u')) || e.key === 'F12') {
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
 });
  
