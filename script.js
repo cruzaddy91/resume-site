@@ -295,9 +295,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
-            // Let Netlify handle the form submission
-            // The form will redirect to success.html after submission
+            e.preventDefault();
+            
+            // Show sending notification
             showNotification('Sending your message...', 'info');
+            
+            // Get form data
+            const formData = new FormData(this);
+            
+            // Submit form to Netlify
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams(formData).toString()
+            })
+            .then(response => {
+                if (response.ok) {
+                    showNotification('Message sent successfully!', 'success');
+                    // Redirect to success page after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'success.html';
+                    }, 1500);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Failed to send message. Please try again.', 'error');
+            });
         });
     }
 }); 
