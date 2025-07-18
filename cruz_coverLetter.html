@@ -954,32 +954,7 @@
             }, 1000);
         }
         
-        // Download PDF functionality
-        function downloadCoverLetterPDF() {
-            // Create a temporary link to trigger download
-            const link = document.createElement('a');
-            link.href = window.location.href;
-            link.download = 'Adam_Cruz_Cover_Letter.pdf';
-            link.target = '_blank';
-            
-            // Hide controls before download
-            const printControls = document.querySelector('.print-controls');
-            const themeSwitcher = document.querySelector('.theme-switcher');
-            
-            if (printControls) printControls.style.display = 'none';
-            if (themeSwitcher) themeSwitcher.style.display = 'none';
-            
-            // Trigger print dialog for PDF save
-            setTimeout(() => {
-                window.print();
-                
-                // Show controls again
-                setTimeout(() => {
-                    if (printControls) printControls.style.display = 'flex';
-                    if (themeSwitcher) themeSwitcher.style.display = 'flex';
-                }, 1000);
-            }, 100);
-        }
+
     </script>
 </body>
 </html> 

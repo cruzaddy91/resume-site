@@ -500,10 +500,10 @@
                     <div class="document-content">
                         <h3>Resume</h3>
                         <p>Download my professional resume as a PDF</p>
-                        <button class="download-btn" onclick="downloadFile('cruz_resume.html')">
+                        <a href="documents/cruz_resume.pdf" class="download-btn" download>
                             <i class="fas fa-download"></i>
                             Download Resume PDF
-                        </button>
+                        </a>
                     </div>
                 </div>
 
@@ -514,25 +514,16 @@
                     <div class="document-content">
                         <h3>Cover Letter</h3>
                         <p>Download my cover letter as a PDF</p>
-                        <button class="download-btn" onclick="downloadFile('cruz_coverLetter.html')">
+                        <a href="documents/cruz_coverLetter.pdf" class="download-btn" download>
                             <i class="fas fa-download"></i>
                             Download Cover Letter PDF
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
     </div>
 
     <script>
-        function downloadFile(url) {
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = url.split('/').pop();
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
         function scrollToContact() {
             window.location.href = 'index.html#contact';
         }
