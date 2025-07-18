@@ -1397,6 +1397,225 @@
             margin-bottom: 8px;
             opacity: 0.8;
         }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .resume-container {
+                margin: 10px;
+                padding: 15px;
+                border-radius: 8px;
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            
+            .contact-info p {
+                font-size: 14px;
+            }
+            
+            .resume-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .left-column, .right-column {
+                width: 100%;
+            }
+            
+            .section h2 {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            
+            .section-content {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+            
+            .job-title {
+                font-size: 15px;
+            }
+            
+            .company-name {
+                font-size: 14px;
+            }
+            
+            .date-location {
+                font-size: 12px;
+            }
+            
+            .certification-container,
+            .reference-container {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .certification-group,
+            .reference-card {
+                padding: 10px;
+            }
+            
+            .certification-group h4 {
+                font-size: 15px;
+            }
+            
+            .certification-group li {
+                font-size: 11px;
+            }
+            
+            .reference-card p {
+                font-size: 12px;
+            }
+            
+            .theme-selector {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .theme-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                min-height: 44px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+            
+            .action-btn {
+                padding: 10px 16px;
+                font-size: 14px;
+                min-height: 44px;
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resume-container {
+                margin: 5px;
+                padding: 10px;
+            }
+            
+            .resume-header h1 {
+                font-size: 24px;
+            }
+            
+            .contact-info p {
+                font-size: 13px;
+            }
+            
+            .section h2 {
+                font-size: 18px;
+            }
+            
+            .section-content {
+                font-size: 13px;
+            }
+            
+            .job-title {
+                font-size: 14px;
+            }
+            
+            .company-name {
+                font-size: 13px;
+            }
+            
+            .date-location {
+                font-size: 11px;
+            }
+            
+            .certification-group h4 {
+                font-size: 14px;
+            }
+            
+            .certification-group li {
+                font-size: 10px;
+            }
+            
+            .reference-card p {
+                font-size: 11px;
+            }
+            
+            .theme-btn {
+                padding: 6px 10px;
+                font-size: 11px;
+            }
+            
+            .action-btn {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .resume-container {
+                margin: 2px;
+                padding: 8px;
+            }
+            
+            .resume-header h1 {
+                font-size: 22px;
+            }
+            
+            .contact-info p {
+                font-size: 12px;
+            }
+            
+            .section h2 {
+                font-size: 16px;
+            }
+            
+            .section-content {
+                font-size: 12px;
+            }
+            
+            .job-title {
+                font-size: 13px;
+            }
+            
+            .company-name {
+                font-size: 12px;
+            }
+            
+            .date-location {
+                font-size: 10px;
+            }
+            
+            .certification-group h4 {
+                font-size: 13px;
+            }
+            
+            .certification-group li {
+                font-size: 9px;
+            }
+            
+            .reference-card p {
+                font-size: 10px;
+            }
+            
+            .theme-btn {
+                padding: 5px 8px;
+                font-size: 10px;
+            }
+            
+            .action-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
         .job-description {
             color: var(--text-primary);
             margin-bottom: 8px;
