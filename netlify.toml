@@ -8,12 +8,12 @@
 # Redirects for clean URLs
 [[redirects]]
   from = "/resume"
-  to = "/lockheed_martin_resume.html"
+  to = "/cruz_resume.html"
   status = 200
 
 [[redirects]]
   from = "/cover-letter"
-  to = "/lockheed_martin_cover_letter.html"
+  to = "/cruz_coverLetter.html"
   status = 200
 
 # Handle 404 errors

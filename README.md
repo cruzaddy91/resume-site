@@ -22,8 +22,8 @@ resume-site/
 ├── index.html              # Main homepage
 ├── styles.css              # Main stylesheet
 ├── script.js               # JavaScript functionality
-├── lockheed_martin_resume.html    # Resume page
-├── lockheed_martin_cover_letter.html  # Cover letter page
+├── cruz_resume.html        # Resume page
+├── cruz_coverLetter.html   # Cover letter page
 ├── LICENSE                 # MIT License
 └── README.md              # This file
 ```
