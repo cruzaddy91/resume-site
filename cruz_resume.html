@@ -775,74 +775,198 @@
         @media print {
             @page {
                 size: auto;
-                margin: 0;
+                margin: 0.5in;
             }
-            body, h1, h2, h3, h4, h5, h6, p, li, a {
-                font-family: Arial, Helvetica, sans-serif !important;
-                color: #000 !important;
-                background: #fff !important;
-                text-shadow: none !important;
-                box-shadow: none !important;
+            
+            * {
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                -webkit-font-smoothing: antialiased !important;
+                -moz-osx-font-smoothing: grayscale !important;
             }
+            
             body {
-                margin: 0;
-                width: 100%;
-                line-height: 1.4;
+                margin: 0 !important;
+                width: 100% !important;
+                line-height: 1.4 !important;
                 background: #fff !important;
-                padding: 0;
+                padding: 0 !important;
+                -webkit-text-size-adjust: 100% !important;
+                -ms-text-size-adjust: 100% !important;
+                display: block !important;
             }
-            .header, .section-content, .reference-card, .certification-group {
-                background: #fff !important;
+            
+            .resume-container {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0.5in !important;
                 box-shadow: none !important;
-                border-radius: 0 !important;
-                border-top: 1px solid #000 !important;
-                border-left: none !important;
-                border-right: none !important;
-                border-bottom: none !important;
-                padding: 10px !important;
+                background: white !important;
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+                display: block !important;
             }
-            .header, .left-column, .right-column {
-                width: 100%;
-                margin: 0;
-                padding: 0;
+            
+            .header, .section {
+                page-break-inside: avoid !important;
+                margin-bottom: 1rem !important;
+                background: white !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
-            h2 {
-                font-size: 1.2em;
-                border-bottom: 1px solid #000;
-                padding-bottom: 2px;
-                margin-top: 20px;
-                background: #fff !important;
-                color: #000 !important;
+            
+            .section-title {
+                color: black !important;
+                border-bottom: 2px solid black !important;
+                margin-bottom: 0.5rem !important;
+                page-break-after: avoid !important;
+                font-weight: bold !important;
+                display: block !important;
+                visibility: visible !important;
             }
-            ul {
-                padding-left: 20px;
-                list-style-type: disc;
-                background: #fff !important;
+            
+            .experience-item, .education-item, .skill-category {
+                page-break-inside: avoid !important;
+                margin-bottom: 0.75rem !important;
             }
-            li {
-                padding-left: 0;
-                margin-bottom: 5px;
-                list-style-position: inside;
-                background: #fff !important;
-            }
-            li::before, li::after, .keyword, .highlight {
-                content: none !important;
-                background: none !important;
-                color: #000 !important;
-                border: none !important;
-                box-shadow: none !important;
-            }
-            .theme-switcher {
+            
+            .theme-switcher, .print-btn, .download-btn, .print-controls {
                 display: none !important;
             }
-            .portfolio-button {
-                background: #fff !important;
-                color: #000 !important;
-                border: 1px solid #000 !important;
-                box-shadow: none !important;
+            
+            /* Ensure text is visible */
+            h1, h2, h3, h4, h5, h6 {
+                color: black !important;
+                font-weight: bold !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
             }
-            .job-divider, .reference-divider, .reference-card::before, .reference-card::after, .certification-group::before {
-                display: none !important;
+            
+            p, li, td, th, div, span {
+                color: black !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+            
+            /* Force background colors to print */
+            .highlight-bg {
+                background-color: #f0f0f0 !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Ensure borders print */
+            .border, .card {
+                border: 1px solid #ccc !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            /* Force specific sections to display */
+            .right-column, .left-column {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                width: 100% !important;
+                float: none !important;
+                position: static !important;
+                background: white !important;
+            }
+            
+            /* Ensure Professional Summary content is visible */
+            .section {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 1rem !important;
+                background: white !important;
+            }
+            
+            .section h2 {
+                display: block !important;
+                visibility: visible !important;
+                color: black !important;
+                font-weight: bold !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .section p {
+                display: block !important;
+                visibility: visible !important;
+                color: black !important;
+                margin-bottom: 0.5rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .section ul {
+                display: block !important;
+                visibility: visible !important;
+                color: black !important;
+                margin-left: 1.5rem !important;
+            }
+            
+            .section li {
+                display: list-item !important;
+                visibility: visible !important;
+                color: black !important;
+                margin-bottom: 0.25rem !important;
+            }
+            
+            .section-content {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: black !important;
+                background: white !important;
+            }
+            
+            /* Safari-specific fixes */
+            @supports (-webkit-appearance: none) {
+                body {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                }
+                
+                .resume-container {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                }
+                
+                .left-column, .right-column {
+                    -webkit-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                }
+            }
+            
+            /* Firefox-specific fixes */
+            @supports (-moz-appearance: none) {
+                body {
+                    -moz-transform: translateZ(0) !important;
+                    transform: translateZ(0) !important;
+                }
+            }
+            
+            /* Force all text elements to be visible */
+            .section-content, .contact-info, .certification-container, .reference-container {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                color: black !important;
+            }
+            
+            /* Ensure keywords are visible */
+            .keyword {
+                background: #f0f0f0 !important;
+                color: black !important;
+                border: 1px solid #ccc !important;
+                padding: 1px 3px !important;
+                -webkit-print-color-adjust: exact !important;
+                color-adjust: exact !important;
             }
         }
         
