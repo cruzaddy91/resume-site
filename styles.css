@@ -566,6 +566,8 @@ section {
         transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 2rem 0;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
     }
 
     .nav-menu.active {
@@ -662,12 +664,14 @@ section {
         max-width: 250px;
         font-size: 0.85rem;
         padding: 0.5rem 1.2rem;
+        min-height: 44px; /* Better touch target */
     }
 
     .nav-menu .resume-btn {
         padding: 0.6rem 1.2rem;
         font-size: 0.85rem;
         max-width: 180px;
+        min-height: 44px; /* Better touch target */
     }
 
     .skills-grid {
@@ -683,6 +687,26 @@ section {
         width: 220px;
         height: 220px;
     }
+    
+    /* Better spacing for mobile */
+    .hero {
+        padding-top: 70px;
+    }
+    
+    .section {
+        padding: 3rem 0;
+    }
+    
+    /* Improve form touch targets */
+    .contact-form input,
+    .contact-form textarea {
+        min-height: 44px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .contact-form textarea {
+        min-height: 100px;
+    }
 }
 
 @media (max-width: 360px) {
@@ -690,6 +714,67 @@ section {
         padding: 0.5rem 1rem;
         font-size: 0.8rem;
         max-width: 160px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+    }
+    
+    .profile-image {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .nav-container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .timeline-content h3 {
+        font-size: 1.1rem;
+    }
+    
+    .timeline-content h4 {
+        font-size: 0.9rem;
+    }
+    
+    .skill-category h4 {
+        font-size: 1rem;
+    }
+    
+    .skill-category li {
+        font-size: 0.85rem;
+    }
+    
+    .btn {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 0.5rem;
     }
 }
 
