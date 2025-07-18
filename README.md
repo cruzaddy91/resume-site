@@ -1,178 +1,94 @@
-# Adam Cruz - Personal Resume Website
+# Adam Cruz - Professional Portfolio & Resume Site
 
-A modern, responsive personal portfolio website showcasing professional experience, skills, and projects. Built with HTML5, CSS3, and JavaScript for optimal performance and user experience.
+A modern, responsive portfolio website showcasing my professional experience, technical skills, and downloadable resume/cover letter.
 
-## 🌟 Features
-
-- **Modern Design**: Clean, professional layout with gradient backgrounds and smooth animations
-- **Responsive**: Fully responsive design that works on all devices (desktop, tablet, mobile)
-- **Interactive**: Smooth scrolling navigation, hover effects, and form validation
-- **Performance Optimized**: Fast loading times with optimized assets
-- **SEO Friendly**: Proper meta tags and semantic HTML structure
-- **Accessible**: WCAG compliant design with proper ARIA labels
-
-## 🚀 Live Demo
-
-Visit the live website: [Your Netlify URL will be here]
-
-## 📁 Project Structure
+## 🏗️ Project Structure
 
 ```
 resume-site/
-├── index.html              # Main homepage
-├── landing.html            # Resume & Cover Letter landing page
-├── styles.css              # Main stylesheet
-├── script.js               # JavaScript functionality
-├── cruz_resume.html        # Resume page
-├── cruz_coverLetter.html   # Cover letter page
-├── LICENSE                 # MIT License
-└── README.md              # This file
+│
+├── README.md             # 📘 Project overview and instructions
+├── LICENSE               # 📜 License information (in docs/)
+├── .gitignore            # 🚫 Files/directories Git should ignore
+├── netlify.toml          # ⚙️ Netlify deployment configuration
+│
+├── docs/                 # 📄 Documentation files
+│   ├── README.md         # → Detailed project documentation
+│   └── LICENSE           # → License information
+│
+├── src/                  # 💻 Main source code
+│   ├── index.html        # → Main portfolio homepage
+│   ├── landing.html      # → Resume & cover letter landing page
+│   ├── cruz_resume.html  # → Interactive resume page
+│   ├── cruz_coverLetter.html # → Interactive cover letter page
+│   ├── success.html      # → Form submission success page
+│   ├── styles.css        # → Main stylesheet
+│   └── script.js         # → JavaScript functionality
+│
+└── assets/               # 📊 Static assets
+    ├── documents/        # → PDF files
+    │   ├── cruz_resume.pdf
+    │   └── cruz_coverLetter.pdf
+    └── landing_page_picture.jpeg # → Profile image
 ```
+
+## 🚀 Features
+
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
+- **Modern UI/UX**: Clean, professional design with smooth animations
+- **Interactive Resume**: Multiple theme options and print/download functionality
+- **Cross-Browser Compatibility**: Optimized for Safari, Chrome, Firefox, and Edge
+- **PDF Generation**: Direct PDF downloads and print-to-PDF support
+- **Contact Form**: Netlify Forms integration for easy communication
+- **SEO Optimized**: Meta tags, clean URLs, and semantic HTML
 
 ## 🛠️ Technologies Used
 
-- **HTML5**: Semantic markup and modern HTML features
+- **HTML5**: Semantic markup and modern web standards
 - **CSS3**: Flexbox, Grid, animations, and responsive design
-- **JavaScript (ES6+)**: Modern JavaScript with async/await and modules
-- **Font Awesome**: Icons for enhanced visual appeal
-- **Google Fonts**: Inter font family for typography
+- **JavaScript (ES6+)**: DOM manipulation, event handling, and animations
+- **Netlify**: Static site hosting and form handling
+- **Font Awesome**: Icons and visual elements
 
-## 📱 Responsive Design
+## 📱 Browser Support
 
-The website is fully responsive and optimized for:
-- Desktop (1200px+)
-- Tablet (768px - 1199px)
-- Mobile (320px - 767px)
-
-## 🎨 Design Features
-
-- **Gradient Backgrounds**: Modern gradient color schemes
-- **Smooth Animations**: CSS transitions and JavaScript animations
-- **Interactive Elements**: Hover effects and micro-interactions
-- **Typography**: Clean, readable font hierarchy
-- **Color Scheme**: Professional blue and purple gradients
-
-## 📋 Sections
-
-1. **Hero Section**: Introduction and call-to-action buttons
-2. **About**: Personal information and technical skills
-3. **Experience**: Professional work history with timeline
-4. **Projects**: Featured projects with technology tags
-5. **Contact**: Contact form and social links
-6. **Resume**: Direct link to detailed resume
+- ✅ Safari (including PDF export)
+- ✅ Chrome/Chromium
+- ✅ Firefox
+- ✅ Microsoft Edge
+- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## 🚀 Deployment
 
-### Netlify Deployment
+This site is deployed on **Netlify** and automatically updates when changes are pushed to the main branch.
 
-This website is optimized for Netlify deployment. To deploy:
+**Live Site**: [Your Netlify URL]
 
-1. **Connect to GitHub**:
-   - Push your code to GitHub
-   - Connect your repository to Netlify
+## 📄 Documents
 
-2. **Deploy Settings**:
-   - Build command: (leave empty for static sites)
-   - Publish directory: `/` (root directory)
-   - Node version: (not required for static sites)
+- **Resume**: Available as both interactive HTML and downloadable PDF
+- **Cover Letter**: Available as both interactive HTML and downloadable PDF
+- **Direct PDF Downloads**: Located in `assets/documents/`
 
-3. **Custom Domain** (Optional):
-   - Add your custom domain in Netlify settings
-   - Configure DNS records as instructed
+## 🔧 Development
 
-### Local Development
+To run this project locally:
 
-To run the website locally:
+1. Clone the repository
+2. Navigate to the `src/` directory
+3. Start a local server: `python3 -m http.server 8000`
+4. Open `http://localhost:8000` in your browser
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/cruzaddy91/resume-site.git
-   cd resume-site
-   ```
+## 📝 License
 
-2. Open in your browser:
-   - Double-click `index.html` or
-   - Use a local server: `python -m http.server 8000`
+This project is licensed under the MIT License - see the [LICENSE](docs/LICENSE) file for details.
 
-## 🔧 Customization
+## 🤝 Contact
 
-### Personal Information
-Update the following in `index.html`:
-- Name and title in the hero section
-- About section content
-- Experience details
-- Project information
-- Contact information
-
-### Styling
-Modify `styles.css` to:
-- Change color scheme (update CSS variables)
-- Adjust typography
-- Modify layout and spacing
-- Add custom animations
-
-### Functionality
-Enhance `script.js` with:
-- Additional form handling
-- Custom animations
-- Analytics integration
-- Performance optimizations
-
-## 📧 Contact Form
-
-The contact form includes:
-- Client-side validation
-- Success/error notifications
-- Responsive design
-- Accessibility features
-
-**Note**: The form currently shows a success message. To make it functional, integrate with:
-- Netlify Forms
-- EmailJS
-- Custom backend API
-
-## 🔍 SEO Optimization
-
-- Meta tags for social sharing
-- Open Graph tags
-- Structured data markup
-- Semantic HTML structure
-- Optimized images and assets
-
-## 📊 Performance
-
-- Optimized CSS and JavaScript
-- Minimal external dependencies
-- Fast loading times
-- Mobile-first approach
-- Progressive enhancement
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Unsplash for placeholder images
-- Netlify for hosting
-
-## 📞 Support
-
-For questions or support, please contact:
-- Email: [aec0713@westminsteru.edu]
-- LinkedIn: [https://www.linkedin.com/in/cruzadam91/]
-- GitHub: [https://github.com/cruzaddy91?tab=repositories]
+- **Email**: aec0713@westminsteru.edu
+- **LinkedIn**: [Adam Cruz](https://www.linkedin.com/in/cruzadam91)
+- **GitHub**: [cruzaddy91](https://github.com/cruzaddy91)
 
 ---
 
-**Built with ❤️ by Adam Cruz** 
+*This portfolio was built with modern web technologies and follows professional development practices.* 
