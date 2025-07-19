@@ -24,13 +24,12 @@ resume-site/
 │   ├── success.html      # Form submission success page
 │   ├── styles.css        # Main stylesheet
 │   ├── script.js         # JavaScript functionality
-│   └── robots.txt        # Search engine configuration
-│
-└── assets/               # Static assets
-    ├── documents/        # PDF files
-    │   ├── cruz_resume.pdf
-    │   └── cruz_coverLetter.pdf
-    └── landing_page_picture.jpeg # Profile image
+│   ├── robots.txt        # Search engine configuration
+│   └── assets/           # Static assets
+│       ├── documents/    # PDF files
+│       │   ├── cruz_resume.pdf
+│       │   └── cruz_coverLetter.pdf
+│       └── landing_page_picture.jpeg # Profile image
 ```
 
 ## Features
