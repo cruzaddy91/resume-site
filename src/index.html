@@ -365,23 +365,22 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" name="contact" method="POST">
+                    <form id="contactForm" name="contact" method="POST" novalidate>
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
                         <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Your Name" required>
+                            <input type="text" name="name" id="name" placeholder="Your Name">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Your Email" required>
+                            <input type="email" name="email" id="email" placeholder="Your Email">
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
+                            <input type="text" name="subject" id="subject" placeholder="Subject">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" id="message" placeholder="Your Message" rows="5"></textarea>
                         </div>
-                        <!-- reCAPTCHA temporarily disabled -->
                         <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                         <div id="formMessage" class="form-message"></div>
                     </form>
@@ -407,6 +406,7 @@
             
             // Prevent multiple submissions
             if (isSubmitting) {
+                console.log('Form already submitting, ignoring...');
                 return;
             }
             
@@ -415,13 +415,22 @@
             const submitBtn = document.getElementById('submitBtn');
             const formMessage = document.getElementById('formMessage');
             
+            // Clear any previous messages
+            formMessage.innerHTML = '';
+            
             // Disable button and show loading
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
-            formMessage.innerHTML = '';
             
-            // Submit form directly without reCAPTCHA for now
-            await submitForm();
+            try {
+                await submitForm();
+            } catch (error) {
+                console.error('Form submission error:', error);
+                // Re-enable button on error
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                isSubmitting = false;
+            }
         });
         
         async function submitForm() {
@@ -430,11 +439,22 @@
             const subject = document.getElementById('subject').value.trim();
             const message = document.getElementById('message').value.trim();
             
+            const formMessage = document.getElementById('formMessage');
+            const submitBtn = document.getElementById('submitBtn');
+            
             // Client-side validation
             if (!name || !email || !subject || !message) {
-                const formMessage = document.getElementById('formMessage');
-                formMessage.innerHTML = `<div class="error-message">Please fill in all fields.</div>`;
-                const submitBtn = document.getElementById('submitBtn');
+                formMessage.innerHTML = `<div class="error-message">All fields are required. Please fill in all fields.</div>`;
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                isSubmitting = false;
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                formMessage.innerHTML = `<div class="error-message">Please enter a valid email address.</div>`;
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
                 isSubmitting = false;
@@ -449,6 +469,8 @@
             };
             
             try {
+                console.log('Submitting form data:', formData);
+                
                 const response = await fetch('/.netlify/functions/contact-form', {
                     method: 'POST',
                     headers: {
@@ -457,31 +479,34 @@
                     body: JSON.stringify(formData)
                 });
                 
+                console.log('Response status:', response.status);
+                
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    throw new Error(`Server error: ${response.status}`);
                 }
                 
                 const result = await response.json();
+                console.log('Response result:', result);
                 
                 if (result.success) {
-                    // Show success message before redirect
-                    const formMessage = document.getElementById('formMessage');
-                    formMessage.innerHTML = `<div class="success-message">Message sent successfully! Redirecting...</div>`;
+                    // Show success message
+                    formMessage.innerHTML = `<div class="success-message">Thank you for your message! I'll get back to you soon.</div>`;
                     
-                    // Redirect to success page with name after a short delay
-                    setTimeout(() => {
-                        window.location.href = `success.html?name=${encodeURIComponent(result.name)}`;
-                    }, 1000);
+                    // Reset form
+                    document.getElementById('contactForm').reset();
+                    
+                    // Re-enable button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    isSubmitting = false;
                 } else {
                     throw new Error(result.error || 'Failed to send message');
                 }
             } catch (error) {
                 console.error('Error:', error);
-                const formMessage = document.getElementById('formMessage');
                 formMessage.innerHTML = `<div class="error-message">Error: ${error.message}. Please try again.</div>`;
                 
                 // Re-enable button
-                const submitBtn = document.getElementById('submitBtn');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
                 isSubmitting = false;
