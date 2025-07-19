@@ -323,5 +323,67 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
+    // Anti-scraping protection
+    // Disable right-click on entire page
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Disable text selection
+    document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Disable copy functionality
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Disable cut functionality
+    document.addEventListener('cut', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Disable paste functionality
+    document.addEventListener('paste', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // Detect and block common scraping tools
+    const userAgent = navigator.userAgent.toLowerCase();
+    const suspiciousAgents = [
+        'scraper', 'crawler', 'spider', 'bot', 'curl', 'wget', 'python', 'requests',
+        'beautifulsoup', 'selenium', 'phantomjs', 'headless', 'automation'
+    ];
+    
+    if (suspiciousAgents.some(agent => userAgent.includes(agent))) {
+        // Redirect or show warning for suspicious user agents
+        document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;"><h2>Access Denied</h2><p>Automated access is not allowed.</p></div>';
+    }
+    
+    // Disable developer tools (basic protection)
+    document.addEventListener('keydown', function(e) {
+        // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J')) ||
+            (e.ctrlKey && e.key === 'u')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // Disable view source
+    document.addEventListener('keydown', function(e) {
+        if (e.ctrlKey && e.key === 'u') {
+            e.preventDefault();
+            return false;
+        }
+    });
 });
  

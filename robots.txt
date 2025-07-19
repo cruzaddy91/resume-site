@@ -1,0 +1,74 @@
+User-agent: *
+Disallow: /
+
+# Block all web crawlers and scrapers
+User-agent: *
+Crawl-delay: 0
+
+# Block specific known scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: Sogou
+Disallow: /
+
+User-agent: 360Spider
+Disallow: /
+
+User-agent: Python-requests
+Disallow: /
+
+User-agent: curl
+Disallow: /
+
+User-agent: wget
+Disallow: /
+
+User-agent: Scrapy
+Disallow: /
+
+User-agent: BeautifulSoup
+Disallow: /
+
+User-agent: Selenium
+Disallow: /
+
+User-agent: PhantomJS
+Disallow: /
+
+User-agent: HeadlessChrome
+Disallow: /
+
+User-agent: Puppeteer
+Disallow: /
+
+# Block all automated tools
+User-agent: *
+Disallow: /assets/
+Disallow: /documents/
+Disallow: /src/
+Disallow: /*.pdf
+Disallow: /*.html
+Disallow: /*.css
+Disallow: /*.js
+Disallow: /*.jpeg
+Disallow: /*.jpg
+Disallow: /*.png 
