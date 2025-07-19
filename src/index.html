@@ -381,7 +381,7 @@
                         <div class="form-group">
                             <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="6LcXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" data-callback="onRecaptchaSuccess" data-size="invisible"></div>
+                        <!-- reCAPTCHA temporarily disabled -->
                         <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                         <div id="formMessage" class="form-message"></div>
                     </form>
@@ -397,9 +397,8 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
-        // Form handling
+        // Form handling - only when submit button is clicked
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -411,22 +410,11 @@
             submitBtn.textContent = 'Sending...';
             formMessage.innerHTML = '';
             
-            try {
-                // Execute reCAPTCHA
-                grecaptcha.execute();
-            } catch (error) {
-                console.error('reCAPTCHA error:', error);
-                // Continue without reCAPTCHA if there's an error
-                await submitForm();
-            }
+            // Submit form directly without reCAPTCHA for now
+            await submitForm();
         });
         
-        // reCAPTCHA callback
-        window.onRecaptchaSuccess = async function(token) {
-            await submitForm(token);
-        };
-        
-        async function submitForm(recaptchaToken = '') {
+        async function submitForm() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value.trim();
@@ -446,8 +434,7 @@
                 name: name,
                 email: email,
                 subject: subject,
-                message: message,
-                'g-recaptcha-response': recaptchaToken
+                message: message
             };
             
             try {
