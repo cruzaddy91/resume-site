@@ -393,5 +393,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Simple test to see if button is clickable
+        document.addEventListener('DOMContentLoaded', function() {
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) {
+                console.log('Submit button found:', submitBtn);
+                submitBtn.addEventListener('click', function(e) {
+                    console.log('Button clicked!');
+                });
+            } else {
+                console.log('Submit button not found');
+            }
+        });
+    </script>
 </body>
 </html> 
