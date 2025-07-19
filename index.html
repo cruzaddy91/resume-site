@@ -365,23 +365,25 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form name="contact" method="POST">
+                    <form id="contactForm" name="contact" method="POST" data-netlify="true">
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
                         <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                            <input type="text" name="name" id="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+                            <input type="email" name="email" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" placeholder="Subject" required>
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                            <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=fmz-K2hLwSI&autoplay=1&fs=1" target="_blank" class="btn btn-primary">Send Message</a>
+                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-callback="onRecaptchaSuccess" data-size="invisible"></div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                        <div id="formMessage" class="form-message"></div>
                     </form>
                 </div>
             </div>
@@ -395,5 +397,72 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            // Disable button and show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+            formMessage.innerHTML = '';
+            
+            try {
+                // Execute reCAPTCHA
+                grecaptcha.execute();
+            } catch (error) {
+                console.error('reCAPTCHA error:', error);
+                // Continue without reCAPTCHA if there's an error
+                await submitForm();
+            }
+        });
+        
+        // reCAPTCHA callback
+        window.onRecaptchaSuccess = async function(token) {
+            await submitForm(token);
+        };
+        
+        async function submitForm(recaptchaToken = '') {
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                'g-recaptcha-response': recaptchaToken
+            };
+            
+            try {
+                const response = await fetch('/.netlify/functions/contact-form', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Redirect to success page with name
+                    window.location.href = `success.html?name=${encodeURIComponent(result.name)}`;
+                } else {
+                    throw new Error(result.error || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                const formMessage = document.getElementById('formMessage');
+                formMessage.innerHTML = `<div class="error-message">Error: ${error.message}. Please try again.</div>`;
+                
+                // Re-enable button
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
+        }
+    </script>
 </body>
 </html> 

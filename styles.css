@@ -565,6 +565,25 @@ section {
     display: none;
 }
 
+.form-message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.success-message {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+
 .footer {
     background: #333;
     color: white;
@@ -727,6 +746,26 @@ section {
     
     .contact-form textarea {
         min-height: 100px;
+    }
+    
+    .form-message {
+        margin-top: 1rem;
+        padding: 0.75rem;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 0.9rem;
+    }
+    
+    .error-message {
+        background-color: #fee2e2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+    }
+    
+    .success-message {
+        background-color: #dcfce7;
+        color: #16a34a;
+        border: 1px solid #bbf7d0;
     }
 }
 

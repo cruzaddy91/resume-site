@@ -1,11 +1,15 @@
 [build]
-  # No build command needed for static sites
+  functions = "netlify/functions"
   publish = "."
 
-[build.environment]
-  # No environment variables needed for static sites
+[functions]
+  node_bundler = "esbuild"
 
-# Redirects for clean URLs
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
 [[redirects]]
   from = "/resume"
   to = "/cruz_resume.html"

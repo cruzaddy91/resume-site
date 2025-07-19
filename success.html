@@ -72,12 +72,23 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h1>Message Sent Successfully!</h1>
-            <p>Thank you for reaching out. I'll get back to you as soon as possible. I typically respond within 24 hours.</p>
+            <p id="thankYouMessage">Thank you for reaching out. I'll get back to you as soon as possible. I typically respond within 24 hours.</p>
             <a href="index.html" class="back-btn">
                 <i class="fas fa-arrow-left"></i>
-                Back to Portfolio
+                Back to Home
             </a>
         </div>
     </div>
+    
+    <script>
+        // Get name from URL parameter and update message
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        
+        if (name) {
+            const thankYouMessage = document.getElementById('thankYouMessage');
+            thankYouMessage.textContent = `Thank you ${name}, your message has been sent! I'll get back to you as soon as possible. I typically respond within 24 hours.`;
+        }
+    </script>
 </body>
 </html> 
