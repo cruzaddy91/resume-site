@@ -290,14 +290,10 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Simple form submission notification
+// Form is now a direct link to YouTube
 document.addEventListener('DOMContentLoaded', () => {
-    const contactForm = document.querySelector('form[name="contact"]');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function() {
-            showNotification('Sending your message...', 'info');
-        });
-    }
+    // Form functionality removed - now redirects to YouTube
+    console.log('Form now redirects to YouTube video');
     
     // Image protection
     const profileImage = document.querySelector('.profile-image');
