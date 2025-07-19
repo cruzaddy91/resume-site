@@ -1986,13 +1986,10 @@
             // Remove all existing theme classes
             document.body.classList.remove('theme-blue', 'theme-charcoal-bronze', 'theme-emerald-gold', 'theme-purple-silver', 'theme-crimson-cream');
             
-            // Add the selected theme class (charcoal is now default, so only add class for other themes)
+            // Add the selected theme class (charcoal is default, so only add class for other themes)
             if (themeName !== 'charcoal-bronze') {
                 document.body.classList.add('theme-' + themeName);
             }
-            
-            // Store the theme preference in localStorage
-            localStorage.setItem('selectedTheme', themeName);
             
             // Update button states
             updateButtonStates(themeName);
@@ -2011,10 +2008,9 @@
             }
         }
         
-        // Load saved theme on page load
+        // Always start with charcoal theme on page load
         document.addEventListener('DOMContentLoaded', function() {
-            const savedTheme = localStorage.getItem('selectedTheme') || 'charcoal-bronze';
-            setTheme(savedTheme);
+            setTheme('charcoal-bronze');
         });
         
         // Print functionality
