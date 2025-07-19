@@ -290,10 +290,17 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Form is now a direct link to YouTube
+// Disable form submission - keep UI but redirect to YouTube only
 document.addEventListener('DOMContentLoaded', () => {
-    // Form functionality removed - now redirects to YouTube
-    console.log('Form now redirects to YouTube video');
+    // Prevent form submission to Netlify/GitHub
+    const contactForm = document.querySelector('form[name="contact"]');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+            return false;
+        });
+    }
+    console.log('Form submission disabled - only YouTube redirect works');
     
     // Image protection
     const profileImage = document.querySelector('.profile-image');
