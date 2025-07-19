@@ -485,17 +485,18 @@
                     
                     console.log('Server response status:', response.status);
                     
-                    if (!response.ok) {
-                        throw new Error(`Server error: ${response.status}`);
-                    }
-                    
                     const result = await response.json();
                     console.log('Server result:', result);
+                    
+                    // Check if response was successful
+                    if (!response.ok) {
+                        return { success: false, error: result.error || `Server error: ${response.status}` };
+                    }
                     
                     return result;
                 } catch (error) {
                     console.error('Server error:', error);
-                    return { success: false, error: `Server error: ${error.message}` };
+                    return { success: false, error: `Network error: ${error.message}` };
                 }
             }
         })();
