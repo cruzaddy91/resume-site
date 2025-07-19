@@ -365,21 +365,18 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" name="contact" method="POST" novalidate>
-                        <p class="hidden">
-                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                        </p>
+                    <form name="contact" method="POST" netlify>
                         <div class="form-group">
-                            <input type="text" name="name" id="name" placeholder="Your Name">
+                            <input type="text" name="name" id="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" id="email" placeholder="Your Email">
+                            <input type="email" name="email" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="message" placeholder="Your Message" rows="5"></textarea>
+                            <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                         <div id="formMessage" class="form-message"></div>
@@ -397,109 +394,19 @@
 
     <script src="script.js"></script>
     <script>
-        // Completely isolated form handling to prevent conflicts
-        (function() {
-            let isSubmitting = false;
-            let formSubmitted = false;
+        // Simple form handling - let Netlify handle the submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form[name="contact"]');
+            const submitBtn = document.getElementById('submitBtn');
             
-            // Remove any existing event listeners
-            const form = document.getElementById('contactForm');
-            const newForm = form.cloneNode(true);
-            form.parentNode.replaceChild(newForm, form);
-            
-            // Add single event listener
-            newForm.addEventListener('submit', handleFormSubmit, { once: true });
-            
-            async function handleFormSubmit(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                
-                console.log('Form submit triggered');
-                
-                // Prevent any duplicate submissions
-                if (isSubmitting || formSubmitted) {
-                    console.log('Form already processing, ignoring...');
-                    return false;
-                }
-                
-                isSubmitting = true;
-                formSubmitted = true;
-                
-                const submitBtn = document.getElementById('submitBtn');
-                const formMessage = document.getElementById('formMessage');
-                
-                // Clear ALL previous messages
-                formMessage.innerHTML = '';
-                
-                // Disable button immediately
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Sending...';
-                
-                try {
-                    const result = await processFormSubmission();
-                    
-                    if (result.success) {
-                        // SUCCESS - show only success message
-                        formMessage.innerHTML = `<div class="success-message">Thank you for your message! I'll get back to you soon.</div>`;
-                        newForm.reset();
-                    } else {
-                        // ERROR - show only error message
-                        formMessage.innerHTML = `<div class="error-message">${result.error}</div>`;
-                    }
-                } catch (error) {
-                    console.error('Form error:', error);
-                    formMessage.innerHTML = `<div class="error-message">Error: ${error.message}. Please try again.</div>`;
-                } finally {
-                    // Always re-enable button
-                    submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send Message';
-                    isSubmitting = false;
-                }
+            if (form) {
+                form.addEventListener('submit', function() {
+                    // Just show loading state - Netlify handles the rest
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                });
             }
-            
-            async function processFormSubmission() {
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const subject = document.getElementById('subject').value.trim();
-                const message = document.getElementById('message').value.trim();
-                
-                console.log('Processing form with data:', { name, email, subject, message });
-                
-                // Validation - return error object if validation fails
-                if (!name || !email || !subject || !message) {
-                    return { success: false, error: 'All fields are required. Please fill in all fields.' };
-                }
-                
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(email)) {
-                    return { success: false, error: 'Please enter a valid email address.' };
-                }
-                
-                // Submit to server
-                try {
-                    const response = await fetch('/.netlify/functions/contact-form', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, email, subject, message })
-                    });
-                    
-                    console.log('Server response status:', response.status);
-                    
-                    const result = await response.json();
-                    console.log('Server result:', result);
-                    
-                    // Check if response was successful
-                    if (!response.ok) {
-                        return { success: false, error: result.error || `Server error: ${response.status}` };
-                    }
-                    
-                    return result;
-                } catch (error) {
-                    console.error('Server error:', error);
-                    return { success: false, error: `Network error: ${error.message}` };
-                }
-            }
-        })();
+        });
     </script>
 </body>
 </html> 
