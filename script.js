@@ -290,6 +290,24 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Cache-busting mechanism
+function addCacheBuster() {
+    const links = document.querySelectorAll('link[rel="stylesheet"], script[src]');
+    const timestamp = new Date().getTime();
+    
+    links.forEach(link => {
+        if (link.href && !link.href.includes('http')) {
+            link.href = link.href + (link.href.includes('?') ? '&' : '?') + '_cb=' + timestamp;
+        }
+    });
+}
+
+// Force reload if page is cached (optional)
+if (performance.navigation.type === 1) {
+    // Page was reloaded, clear any cached data
+    sessionStorage.clear();
+}
+
 // Disable form submission - keep UI but redirect to YouTube only
 document.addEventListener('DOMContentLoaded', () => {
     // Prevent form submission to Netlify/GitHub
