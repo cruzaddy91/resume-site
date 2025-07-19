@@ -14,7 +14,7 @@ exports.handler = async (event, context) => {
 
   try {
     const body = JSON.parse(event.body);
-    const { name, email, subject, message, 'g-recaptcha-response': recaptchaToken } = body;
+    const { name, email, subject, message } = body;
 
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -43,25 +43,7 @@ exports.handler = async (event, context) => {
       submissions.set(clientIP, [now]);
     }
 
-    // Verify reCAPTCHA
-    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
-    if (recaptchaSecret) {
-      const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: `secret=${recaptchaSecret}&response=${recaptchaToken}`
-      });
-      
-      const recaptchaResult = await recaptchaResponse.json();
-      if (!recaptchaResult.success) {
-        return {
-          statusCode: 400,
-          body: JSON.stringify({ error: 'reCAPTCHA verification failed' })
-        };
-      }
-    }
+    // reCAPTCHA removed for simplicity
 
     // Create email transporter
     const transporter = nodemailer.createTransporter({
