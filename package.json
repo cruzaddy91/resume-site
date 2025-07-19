@@ -1,8 +1,5 @@
 {
   "name": "resume-site",
   "version": "1.0.0",
-  "description": "Adam Cruz's resume website with contact form",
-  "dependencies": {
-    "nodemailer": "^6.9.7"
-  }
+  "description": "Adam Cruz's resume website with contact form"
 } 

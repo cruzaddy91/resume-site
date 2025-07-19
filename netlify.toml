@@ -1,14 +1,9 @@
 [build]
-  functions = "netlify/functions"
   publish = "src"
 
-[functions]
-  node_bundler = "esbuild"
 
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
+
+
 
 [[redirects]]
   from = "/resume"
