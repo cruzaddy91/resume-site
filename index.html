@@ -365,7 +365,7 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm" name="contact" method="POST" data-netlify="true">
+                    <form id="contactForm" name="contact" method="POST">
                         <p class="hidden">
                             <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                         </p>
@@ -381,7 +381,7 @@
                         <div class="form-group">
                             <textarea name="message" id="message" placeholder="Your Message" rows="5" required></textarea>
                         </div>
-                        <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY" data-callback="onRecaptchaSuccess" data-size="invisible"></div>
+                        <div class="g-recaptcha" data-sitekey="6LcXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" data-callback="onRecaptchaSuccess" data-size="invisible"></div>
                         <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
                         <div id="formMessage" class="form-message"></div>
                     </form>
@@ -427,11 +427,26 @@
         };
         
         async function submitForm(recaptchaToken = '') {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Client-side validation
+            if (!name || !email || !subject || !message) {
+                const formMessage = document.getElementById('formMessage');
+                formMessage.innerHTML = `<div class="error-message">Please fill in all fields.</div>`;
+                const submitBtn = document.getElementById('submitBtn');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                return;
+            }
+            
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value,
+                name: name,
+                email: email,
+                subject: subject,
+                message: message,
                 'g-recaptcha-response': recaptchaToken
             };
             
@@ -443,6 +458,10 @@
                     },
                     body: JSON.stringify(formData)
                 });
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 
                 const result = await response.json();
                 
