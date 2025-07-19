@@ -393,20 +393,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script>
-        // Simple form handling - let Netlify handle the submission
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.querySelector('form[name="contact"]');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            if (form) {
-                form.addEventListener('submit', function() {
-                    // Just show loading state - Netlify handles the rest
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Sending...';
-                });
-            }
-        });
-    </script>
 </body>
 </html> 
