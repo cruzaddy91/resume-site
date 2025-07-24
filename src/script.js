@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (heroTitle) {
         const originalText = heroTitle.textContent;
         setTimeout(() => {
+            heroTitle.style.opacity = '1';
             typeWriter(heroTitle, originalText, 80);
         }, 500);
     }
