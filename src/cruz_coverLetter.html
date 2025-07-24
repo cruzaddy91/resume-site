@@ -200,602 +200,85 @@
                 margin: 0 !important;
                 padding: 0.5in !important;
                 box-shadow: none !important;
+                border: none !important;
                 background: white !important;
             }
             
-            .header, .section {
-                page-break-inside: avoid !important;
-                margin-bottom: 1rem !important;
+            .header {
+                margin-bottom: 1in !important;
+                text-align: left !important;
             }
             
-            .section-title {
-                color: black !important;
-                border-bottom: 2px solid black !important;
-                margin-bottom: 0.5rem !important;
-                page-break-after: avoid !important;
-            }
-            
-            .theme-switcher, .print-btn, .download-btn {
-                display: none !important;
-            }
-            
-            /* Ensure text is visible */
-            h1, h2, h3, h4, h5, h6 {
-                color: black !important;
-                font-weight: bold !important;
-            }
-            
-            p, li, td, th {
+            .header h1 {
+                font-size: 24pt !important;
+                margin-bottom: 0.2in !important;
                 color: black !important;
             }
             
-            /* Force background colors to print */
-            .highlight-bg {
-                background-color: #f0f0f0 !important;
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
+            .header h2 {
+                font-size: 14pt !important;
+                margin-bottom: 0.1in !important;
+                color: black !important;
             }
             
-            /* Ensure borders print */
-            .border, .card {
-                border: 1px solid #ccc !important;
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-        }
-        
-        /* Cross-browser compatibility */
-        @supports (-webkit-appearance: none) {
-            /* Safari/Chrome specific fixes */
-            .cover-letter-container {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-        }
-        
-        @supports (-moz-appearance: none) {
-            /* Firefox specific fixes */
-            .cover-letter-container {
-                -moz-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-        }
-        
-        /* Theme Switcher Buttons */
-        .theme-switcher {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .theme-switcher:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        /* Print Controls */
-        .print-controls {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 12px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .print-controls:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .print-btn, .download-btn {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 8px 12px;
-            font-size: 0.8rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-        
-        .print-btn:hover, .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        }
-
-        .theme-btn {
-            width: 32px;
-            height: 32px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .theme-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        }
-
-        .theme-btn.active {
-            transform: scale(1.15);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-        }
-
-        .theme-btn-blue {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        }
-
-        .theme-btn-charcoal {
-            background: linear-gradient(135deg, #34495e, #2c3e50);
-        }
-
-        .theme-btn-emerald {
-            background: linear-gradient(135deg, #059669, #047857);
-        }
-
-        .theme-btn-purple {
-            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-        }
-
-        .theme-btn-crimson {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-        }
-
-        .theme-btn::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8px;
-            height: 8px;
-            background: white;
-            border-radius: 50%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .theme-btn.active::after {
-            opacity: 1;
-        }
-
-        /* Apply CSS Variables to Existing Styles */
-        body {
-            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-mid1) 25%, var(--background-mid2) 50%, var(--background-mid3) 75%, var(--background-end) 100%);
-            font-family: 'Inter', 'Montserrat', Arial, sans-serif;
-            margin: 20px auto;
-            line-height: 1.6;
-            color: var(--text-primary);
-            max-width: 800px;
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
-            border-radius: 12px;
-            border-top: 4px solid var(--primary-color);
-            box-shadow: 
-                0 50px 100px -25px rgba(0, 0, 0, 0.6),
-                0 25px 50px -12px rgba(0, 0, 0, 0.4),
-                0 10px 20px -5px rgba(0, 0, 0, 0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.3),
-                inset 0 3px 0 rgba(255, 255, 255, 0.4);
-            border-left: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-            animation: fadeInUp 0.6s ease-out;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .header:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-top: 4px solid var(--primary-dark);
-            box-shadow: 
-                0 70px 140px -30px rgba(0, 0, 0, 0.8),
-                0 35px 70px -15px rgba(0, 0, 0, 0.6),
-                0 15px 30px -8px rgba(0, 0, 0, 0.4),
-                0 0 0 2px rgba(255, 255, 255, 0.4),
-                inset 0 3px 0 rgba(255, 255, 255, 0.5);
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            border-radius: 12px;
-            pointer-events: none;
-        }
-
-        .header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 52px;
-            color: var(--text-primary);
-            margin: 0 0 8px 0;
-            text-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.15),
-                0 4px 8px rgba(0, 0, 0, 0.1);
-            line-height: 1.1;
-            text-transform: uppercase;
-            font-variant: small-caps;
-            letter-spacing: 2px;
-            position: relative;
-            font-weight: 700;
-            z-index: 1;
-        }
-
-        .header h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            color: var(--primary-color);
-            margin: 0 0 25px 0;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            opacity: 0.8;
-            z-index: 1;
-            position: relative;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 15px;
-            display: inline-block;
-        }
-
-        .contact-info {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.8;
-            letter-spacing: 0.5px;
-            z-index: 1;
-            position: relative;
-            font-weight: 400;
-        }
-
-        .contact-info div {
-            margin-bottom: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info div:hover {
-            color: var(--primary-color);
-            transform: translateX(5px);
-        }
-
-        .contact-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
-            padding: 4px 8px;
-            border-radius: 6px;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact-info a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary-dark);
-            text-decoration: none;
-            text-shadow: 0 0 8px var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            border-color: var(--primary-color);
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
-        }
-
-        .contact-info a:hover::before {
-            left: 100%;
-        }
-
-        .cover-letter-content {
-            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
-            padding: 30px;
-            border-radius: 12px;
-            border-top: 3px solid var(--primary-color);
-            box-shadow: 
-                0 35px 70px -15px var(--shadow-color),
-                0 20px 40px -10px rgba(0, 0, 0, 0.3),
-                0 10px 20px -5px rgba(0, 0, 0, 0.2),
-                0 0 0 2px rgba(255, 255, 255, 0.2),
-                inset 0 3px 0 rgba(255, 255, 255, 0.95);
-            margin-bottom: 20px;
-            border-left: 1px solid var(--border-color);
-            border-right: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        .cover-letter-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
-            border-radius: 12px;
-            pointer-events: none;
-        }
-
-        .cover-letter-content:hover {
-            transform: translateY(-4px) scale(1.01);
-            border-top: 3px solid var(--primary-dark);
-            box-shadow: 
-                0 50px 100px -20px var(--shadow-color-dark),
-                0 25px 50px -12px rgba(0, 0, 0, 0.4),
-                0 15px 30px -8px rgba(0, 0, 0, 0.3),
-                0 0 0 2px rgba(255, 255, 255, 0.25),
-                inset 0 3px 0 rgba(255, 255, 255, 0.98);
-        }
-
-        .cover-letter-content p {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 20px;
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-primary);
-        }
-
-        .cover-letter-content p:first-child {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 
-                0 2px 4px rgba(0, 0, 0, 0.1),
-                0 4px 8px rgba(0, 0, 0, 0.05);
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        .cover-letter-content p:first-child::before {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
-            border-radius: 1px;
-            box-shadow: 0 2px 4px var(--primary-color);
-        }
-
-        .cover-letter-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        .keyword {
-            color: var(--primary-dark);
-            font-weight: 600;
-            background: var(--highlight-bg);
-            padding: 2px 6px;
-            border-radius: 4px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-left: 2px solid var(--highlight-border);
-        }
-
-        .keyword:hover {
-            background: var(--highlight-bg);
-            color: var(--text-primary);
-            transform: scale(1.05);
-        }
-
-        .date-section {
-            text-align: right;
-            margin-bottom: 30px;
-            font-size: 14px;
-            color: var(--text-tertiary);
-        }
-
-        .signature-section {
-            margin-top: 40px;
-            text-align: left;
-        }
-
-        .signature-section p {
-            margin-bottom: 10px;
-        }
-
-        .signature-name {
-            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
-            font-size: 72px;
-            font-weight: 400;
-            color: var(--primary-color);
-            margin-top: 20px;
-            text-transform: none;
-            letter-spacing: 1px;
-            font-style: normal;
-            line-height: 1;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media print {
-            @page {
-                size: auto;
-                margin: 0.5in;
-            }
-            
-            * {
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-                print-color-adjust: exact !important;
-                -webkit-font-smoothing: antialiased !important;
-                -moz-osx-font-smoothing: grayscale !important;
-            }
-            
-            body, h1, h2, h3, h4, h5, h6, p, li, a, div, span {
-                font-family: Arial, Helvetica, sans-serif !important;
-                color: #000 !important;
-                background: #fff !important;
-                text-shadow: none !important;
-                box-shadow: none !important;
-                font-size: 12pt !important;
-                line-height: 1.4 !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            body {
-                margin: 0 !important;
-                width: 100% !important;
-                line-height: 1.4 !important;
-                background: #fff !important;
-                padding: 0 !important;
-                -webkit-text-size-adjust: 100% !important;
-                -ms-text-size-adjust: 100% !important;
-            }
-            
-            .header, .cover-letter-content {
-                background: #fff !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                border: 1px solid #000 !important;
-                padding: 20px !important;
-                margin: 0 !important;
-                page-break-inside: avoid !important;
-            }
-            
-            .theme-switcher, .print-controls {
-                display: none !important;
-            }
-            
-            .keyword {
-                background: #f0f0f0 !important;
-                color: #000 !important;
-                border: 1px solid #ccc !important;
-                box-shadow: none !important;
-                padding: 2px 4px !important;
-                -webkit-print-color-adjust: exact !important;
-                color-adjust: exact !important;
-            }
-            
-            .signature-name {
-                font-family: 'Brush Script MT', 'Lucida Handwriting', cursive !important;
-                font-size: 48pt !important;
-                color: #000 !important;
-                margin-top: 20px !important;
-                line-height: 1 !important;
-            }
-            
-            .date-section {
-                color: #000 !important;
-                font-size: 12pt !important;
-                margin-bottom: 20px !important;
+            .header h3 {
+                font-size: 16pt !important;
+                margin-bottom: 0.3in !important;
+                color: black !important;
             }
             
             .contact-info {
-                color: #000 !important;
                 font-size: 10pt !important;
+                color: black !important;
+                margin-bottom: 0.5in !important;
             }
             
             .contact-info a {
-                color: #000 !important;
-                text-decoration: underline !important;
+                color: black !important;
+                text-decoration: none !important;
             }
             
-            /* Safari-specific fixes */
-            @supports (-webkit-appearance: none) {
-                body {
-                    -webkit-transform: translateZ(0) !important;
-                    transform: translateZ(0) !important;
-                    -webkit-font-smoothing: antialiased !important;
-                    -webkit-text-size-adjust: 100% !important;
-                    -webkit-print-color-adjust: exact !important;
-                }
-                
-                .cover-letter-content {
-                    -webkit-transform: translateZ(0) !important;
-                    transform: translateZ(0) !important;
-                    -webkit-print-color-adjust: exact !important;
-                }
-                
-                /* Force Safari to render all text */
-                .section, .section-content, .header {
-                    -webkit-transform: translateZ(0) !important;
-                    transform: translateZ(0) !important;
-                    -webkit-print-color-adjust: exact !important;
-                    -webkit-font-smoothing: antialiased !important;
-                }
-                
-                /* Ensure text is visible in Safari PDF export */
-                h1, h2, h3, h4, h5, h6, p, li, div, span {
-                    -webkit-transform: translateZ(0) !important;
-                    transform: translateZ(0) !important;
-                    -webkit-print-color-adjust: exact !important;
-                    -webkit-font-smoothing: antialiased !important;
-                    color: black !important;
-                    display: block !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                }
+            .date-section {
+                font-size: 12pt !important;
+                margin-bottom: 0.5in !important;
+                color: black !important;
+            }
+            
+            .cover-letter-content {
+                font-size: 12pt !important;
+                line-height: 1.6 !important;
+                color: black !important;
+                text-align: justify !important;
+            }
+            
+            .letter-content p {
+                margin-bottom: 0.3in !important;
+                text-indent: 0.3in !important;
+            }
+            
+            .keyword {
+                background: none !important;
+                color: black !important;
+                font-weight: bold !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+            
+            .signature-section {
+                margin-top: 0.5in !important;
+                text-align: left !important;
+            }
+            
+            .signature-name {
+                font-size: 12pt !important;
+                font-weight: bold !important;
+                color: black !important;
+                margin-top: 0.2in !important;
+            }
+            
+            .theme-switcher,
+            .print-controls {
+                display: none !important;
             }
             
             /* Additional Safari print optimizations */
@@ -813,14 +296,14 @@
                     -webkit-text-size-adjust: 100% !important;
                 }
                 
-                .cover-letter-content, .section, .section-content {
-                    -webkit-transform: translateZ(0) !important;
-                    transform: translateZ(0) !important;
-                    -webkit-print-color-adjust: exact !important;
-                    display: block !important;
-                    visibility: visible !important;
-                    opacity: 1 !important;
-                }
+                            .cover-letter-content, .section, .section-content {
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+                -webkit-print-color-adjust: exact !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
             }
             
             /* Firefox-specific fixes */
@@ -874,7 +357,7 @@
                 padding: 15px;
             }
             
-            .cover-letter-content p {
+            .letter-content p {
                 margin-bottom: 12px;
             }
             
@@ -900,109 +383,6 @@
             
             .print-btn,
             .download-btn {
-                padding: 10px 16px;
-                font-size: 14px;
-                min-height: 44px;
-                width: 100%;
-                max-width: 200px;
-            }
-            
-            .date-section {
-                font-size: 14px;
-                text-align: center;
-                margin-bottom: 15px;
-            }
-            
-            .signature-section {
-                margin-top: 20px;
-            }
-            
-            .signature-name {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .cover-letter-container {
-                margin: 5px;
-                padding: 10px;
-            }
-            
-            .header h1 {
-                font-size: 24px;
-            }
-            
-            .header h2 {
-                font-size: 18px;
-            }
-            
-            .contact-info {
-                font-size: 13px;
-            }
-            
-            .cover-letter-content {
-                font-size: 13px;
-                padding: 10px;
-            }
-            
-            .cover-letter-content p {
-                margin-bottom: 10px;
-            }
-            
-            .theme-btn {
-                padding: 6px 10px;
-                font-size: 11px;
-            }
-            
-            .print-btn,
-            .download-btn {
-                padding: 8px 14px;
-                font-size: 13px;
-            }
-            
-            .date-section {
-                font-size: 13px;
-            }
-            
-            .signature-name {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 360px) {
-            .cover-letter-container {
-                margin: 2px;
-                padding: 8px;
-            }
-            
-            .header h1 {
-                font-size: 22px;
-            }
-            
-            .header h2 {
-                font-size: 16px;
-            }
-            
-            .contact-info {
-                font-size: 12px;
-            }
-            
-            .cover-letter-content {
-                font-size: 12px;
-                padding: 8px;
-            }
-            
-            .cover-letter-content p {
-                margin-bottom: 8px;
-            }
-            
-            .theme-btn {
-                padding: 5px 8px;
-                font-size: 10px;
-            }
-            
-            .print-btn,
-            .download-btn {
                 padding: 6px 12px;
                 font-size: 12px;
             }
@@ -1015,10 +395,301 @@
                 font-size: 14px;
             }
         }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--background-start) 0%, var(--background-mid1) 25%, var(--background-mid2) 50%, var(--background-mid3) 75%, var(--background-end) 100%);
+            min-height: 100vh;
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .cover-letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, var(--card-bg-start) 0%, var(--card-bg-mid1) 25%, var(--card-bg-mid2) 50%, var(--card-bg-mid3) 75%, var(--card-bg-end) 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-light);
+        }
+
+        .theme-switcher {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .theme-btn.active {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .theme-btn-blue {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+        }
+
+        .theme-btn-charcoal {
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+        }
+
+        .theme-btn-emerald {
+            background: linear-gradient(135deg, #059669, #047857);
+        }
+
+        .theme-btn-purple {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+
+        .theme-btn-crimson {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+        }
+
+        .print-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .print-btn,
+        .download-btn {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px var(--shadow-color);
+        }
+
+        .print-btn:hover,
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px var(--shadow-color-dark);
+        }
+
+        .date-section {
+            text-align: right;
+            margin-bottom: 30px;
+            margin-right: 40px;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .cover-letter-content {
+            padding: 40px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .cover-letter-content p {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .cover-letter-content p:first-child {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 50%, var(--primary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 
+                0 2px 4px rgba(0, 0, 0, 0.1),
+                0 4px 8px rgba(0, 0, 0, 0.05);
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .cover-letter-content p:first-child::before {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
+            border-radius: 1px;
+            box-shadow: 0 2px 4px var(--primary-color);
+        }
+
+        .cover-letter-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .keyword {
+            background: var(--highlight-bg);
+            color: var(--highlight-border);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px solid var(--highlight-border);
+        }
+
+        .signature-section {
+            margin-top: 40px;
+            text-align: left;
+        }
+
+        .signature-section p {
+            margin-bottom: 10px;
+        }
+
+        .signature-name {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-top: 20px;
+            text-transform: none;
+            letter-spacing: 1px;
+            font-style: normal;
+            line-height: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cover-letter-content p {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0;
+        }
+
+        .cover-letter-content p:nth-child(1) { animation-delay: 0.1s; }
+        .cover-letter-content p:nth-child(2) { animation-delay: 0.2s; }
+        .cover-letter-content p:nth-child(3) { animation-delay: 0.3s; }
+        .cover-letter-content p:nth-child(4) { animation-delay: 0.4s; }
+        .cover-letter-content p:nth-child(5) { animation-delay: 0.5s; }
+        .cover-letter-content p:nth-child(6) { animation-delay: 0.6s; }
+        .cover-letter-content p:nth-child(7) { animation-delay: 0.7s; }
     </style>
 </head>
 <body>
-    <div class="header">
+    <div class="cover-letter-container">
+        <div class="header">
         <h1>Adam Cruz</h1>
         <h2>Westminster University</h2>
         <h3>Cover Letter</h3>
@@ -1053,30 +724,23 @@
     </div>
 
     <div class="cover-letter-content">
-        <p>Dear Hiring Manager,</p>
+        <p>My objective is to secure a Software Engineer or Data Engineer position in the Salt Lake City area, where I can leverage my unique combination of computer science education, aviation background, and military experience to contribute to innovative technology solutions.</p>
 
-        <p>I am writing to apply for the <span class="keyword">Software Engineer (Level 2/Junior Level)</span> position on your <span class="keyword">Automated Weight and Balance System (AWBS)</span> team. This role represents an ideal combination of my Computer Science studies with my aviation background from Purdue's Professional Flight program. I have always been passionate about both <span class="keyword">software engineering</span> and <span class="keyword">aircraft operations</span>, and this position allows me to apply my knowledge of <span class="keyword">weight and balance calculations</span> alongside my technical skills.</p>
+        <p>As a current student at Westminster University pursuing a degree in Computer Science & Data Science, I am developing strong technical skills in programming languages including Java, Python, and JavaScript, as well as expertise in data analysis, machine learning, and web development. My academic background from Purdue University in Professional Flight and Aviation Management provides me with valuable domain knowledge in aviation systems and flight operations.</p>
 
-        <p>At Purdue, I gained hands-on experience with the systems your team develops. I completed courses in <span class="keyword">Aerospace Vehicle Systems Design, Analysis And Operations</span>, <span class="keyword">Turbine Aircraft Operations</span>, and <span class="keyword">Large Aircraft Systems</span>; these directly relate to what your AWBS team develops. As I complete my Computer Science degree at Westminster, I can see how software can make aircraft operations safer and more efficient.</p>
+        <p>My professional experience as an IT Intern at EnableCV has given me hands-on experience with the complete software development lifecycle, from requirements analysis to implementation and testing. I have worked on web applications, API development, and system integration projects, demonstrating my ability to deliver practical solutions.</p>
 
-        <p>In my current role at EnableCV, I work through the entire <span class="keyword">software development lifecycle</span>, from <span class="keyword">requirements analysis</span> and <span class="keyword">design documentation</span> to <span class="keyword">software development</span> and <span class="keyword">comprehensive testing</span>. I develop <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span> and create <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for our software. My work with <span class="keyword">API development</span>, <span class="keyword">system integration</span>, and <span class="keyword">database systems</span> aligns directly with what this role requires.</p>
+        <p>My military service as a Tactical Response Force Flight Chief in the United States Air Force instilled in me the discipline, leadership skills, and attention to detail required for mission-critical systems. This experience, combined with my commercial pilot training and aviation safety management background, gives me a unique perspective on the importance of system reliability and safety protocols.</p>
 
-        <p>Throughout my time at Westminster, I have successfully balanced <span class="keyword">multiple part-time jobs</span> while maintaining <span class="keyword">Dean's List</span> status. This demonstrates my <span class="keyword">time management</span> and <span class="keyword">work ethic</span>; I know how to handle multiple responsibilities while maintaining high standards. I am committed to building my career here in Utah as a <span class="keyword">software engineering professional</span>.</p>
+        <p>I am particularly interested in opportunities within the aviation and aerospace sectors, where I can apply my technical skills to develop software solutions that enhance flight safety, operational efficiency, and data management systems. My goal is to contribute to projects that have real-world impact while continuing to grow my technical expertise. However, I remain very much open to any opportunities local to Salt Lake City, UT and surrounding areas.</p>
 
-        <p>What sets me apart is my operational aviation experience. As a <span class="keyword">Commercial Pilot</span> with <span class="keyword">Instrument Rating</span> and <span class="keyword">turbine aircraft operations</span> training, I have seen firsthand how critical accurate weight and balance calculations are for flight safety. My training in <span class="keyword">Aircraft Weight & Balance</span> and <span class="keyword">Center of Gravity Calculations</span> provides insights that most software engineers do not have. I can begin contributing to your AWBS team immediately.</p>
+        <p>I am committed to building my career in Utah and am seeking a role where I can work with experienced professionals, learn from industry best practices, and contribute to meaningful projects. I am confident that my combination of technical skills, domain knowledge, and professional experience makes me a valuable candidate for software engineering positions in the Salt Lake City area.</p>
 
-        <p>I have always respected Lockheed Martin's leadership in aerospace technology. The opportunity to develop software that impacts <span class="keyword">aircraft flight readiness</span> and <span class="keyword">customer experience</span> worldwide is exactly what I want to do. Additionally, I plan to remain in Utah after graduation, so this represents a long-term opportunity for me to grow with your company.</p>
-
-        <p>My military experience as a <span class="keyword">Tactical Response Force Flight Chief</span> taught me the discipline and attention to detail needed for mission-critical systems. I understand <span class="keyword">security protocols</span>, <span class="keyword">system reliability</span>, and <span class="keyword">comprehensive testing</span>; these are crucial for aerospace software.</p>
-
-        <p>I am prepared to contribute to Lockheed Martin's mission of ensuring safety and addressing complex challenges. My combination of <span class="keyword">software engineering skills</span>, <span class="keyword">aviation domain knowledge</span>, and <span class="keyword">military discipline</span> makes me a strong fit for this role. I am confident I can be a valuable team member and help your AWBS platform succeed.</p>
-
-        <p>Thank you for considering my application. I would welcome the opportunity to discuss how I can contribute to your AWBS team.</p>
-
-                 <div class="signature-section">
-             <p>Sincerely,</p>
-             <p class="signature-name">Adam Cruz</p>
-         </div>
+        <div class="signature-section">
+            <p>Sincerely,</p>
+            <p class="signature-name">Adam Cruz</p>
+        </div>
+    </div>
     </div>
 
     <script>
@@ -1130,8 +794,6 @@
                 if (themeSwitcher) themeSwitcher.style.display = 'flex';
             }, 1000);
         }
-        
-
     </script>
 </body>
 </html> 
