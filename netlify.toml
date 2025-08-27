@@ -9,9 +9,9 @@
     # Success page redirect
     success_page = "/success"
 
-# Form processing - send to custom function
-[[forms.processing]]
-  # Process contact form submissions
+# Form notifications - trigger email function
+[[forms.notifications]]
+  # Notify on contact form submission
   form = "contact"
   # Send to custom function
   function = "contact-form"
