@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Cruz - Letter of Objective</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --background: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #d5d5d5;
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+        }
+
+        body {
+            background: var(--background);
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 20px auto;
+            line-height: 1.6;
+            color: var(--text-primary);
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .letter-container {
+            background: var(--card-bg);
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: var(--primary-color);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .header h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        .date-section {
+            text-align: right;
+            margin: 30px 40px 20px 0;
+            font-size: 14px;
+            color: var(--text-tertiary);
+        }
+
+        .letter-content {
+            background: var(--card-bg);
+            padding: 30px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .letter-content p:first-child {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .letter-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .keyword {
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: var(--highlight-bg);
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-left: 2px solid var(--highlight-border);
+        }
+
+        .signature-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .signature-section p {
+            margin-bottom: 10px;
+        }
+
+        .signature-name {
+            font-family: 'Brush Script MT', 'Lucida Handwriting', cursive;
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-top: 15px;
+        }
+
+        .portfolio-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .portfolio-button:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            .letter-container {
+                background: white;
+                box-shadow: none;
+                border-radius: 0;
+                border-top: 1px solid #000;
+            }
+            .header {
+                background: #34495e;
+                color: white;
+            }
+            .letter-content {
+                background: white;
+                color: black;
+            }
+            .keyword {
+                background: none;
+                color: black;
+                font-weight: bold;
+                border: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .header {
+                padding: 20px;
+            }
+            .header h1 {
+                font-size: 28px;
+            }
+            .header h2 {
+                font-size: 16px;
+            }
+            .header h3 {
+                font-size: 20px;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+                font-size: 13px;
+            }
+            .letter-content {
+                padding: 20px;
+                font-size: 14px;
+            }
+            .date-section {
+                margin: 20px 20px 15px 0;
+                font-size: 12px;
+            }
+            .signature-name {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <div class="header">
+            <h1>Adam Cruz</h1>
+            <h2>Westminster University</h2>
+            <h3>Letter of Objective</h3>
+            <div class="contact-info">
+                <div>919 E Atkin Ave, Salt Lake City, UT 84106</div>
+                <div><a href="mailto:aec0713@westminsteru.edu">aec0713@westminsteru.edu</a> | (915) 487-7029</div>
+                <div><a href="https://www.linkedin.com/in/cruzadam91">LinkedIn</a> | <a href="https://github.com/cruzaddy91">GitHub</a></div>
+            </div>
+        </div>
+
+        <div class="date-section">
+            July 7, 2025
+        </div>
+
+        <div class="letter-content">
+            <p>My objective is to secure a Software Engineer or Data Engineer position in the Salt Lake City area, where I can leverage my unique combination of computer science education, aviation background, and military experience to contribute to innovative technology solutions.</p>
+
+            <p>As a current student at Westminster University pursuing a degree in Computer Science & Data Science, I am developing strong technical skills in programming languages including Java, Python, and JavaScript, as well as expertise in data analysis, machine learning, and web development. My academic background from Purdue University in Professional Flight and Aviation Management provides me with valuable domain knowledge in aviation systems and flight operations.</p>
+
+            <p>My professional experience as an IT Intern at EnableCV has given me hands-on experience with the complete software development lifecycle, from requirements analysis to implementation and testing. I have worked on web applications, API development, and system integration projects, demonstrating my ability to deliver practical solutions.</p>
+
+            <p>My military service as a Tactical Response Force Flight Chief in the United States Air Force instilled in me the discipline, leadership skills, and attention to detail required for mission-critical systems. This experience, combined with my commercial pilot training and aviation safety management background, gives me a unique perspective on the importance of system reliability and safety protocols.</p>
+
+            <p>I am particularly interested in opportunities within the aviation and aerospace sectors, where I can apply my technical skills to develop software solutions that enhance flight safety, operational efficiency, and data management systems. My goal is to contribute to projects that have real-world impact while continuing to grow my technical expertise. However, I remain very much open to any opportunities local to Salt Lake City, UT and surrounding areas.</p>
+
+            <p>I am committed to building my career in Utah and am seeking a role where I can work with experienced professionals, learn from industry best practices, and contribute to meaningful projects. I am confident that my combination of technical skills, domain knowledge, and professional experience makes me a valuable candidate for software engineering positions in the Salt Lake City area.</p>
+
+
+
+            <div class="signature-section">
+                <p>Sincerely,</p>
+                <p class="signature-name">Adam Cruz</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

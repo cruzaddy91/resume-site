@@ -20,11 +20,11 @@ Visit the live website: [Your Netlify URL will be here]
 ```
 resume-site/
 ├── index.html              # Main homepage
-├── landing.html            # Resume & Cover Letter landing page
+├── landing.html            # Resume & Letter of Objective landing page
 ├── styles.css              # Main stylesheet
 ├── script.js               # JavaScript functionality
 ├── cruz_resume.html        # Resume page
-├── cruz_coverLetter.html   # Cover letter page
+├── cruz_letterOfObjective.html   # Letter of Objective page
 ├── LICENSE                 # MIT License
 └── README.md              # This file
 ```

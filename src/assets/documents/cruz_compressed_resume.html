@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Cruz - Professional Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --primary-dark: #2c3e50;
+            --primary-light: #cd7f32;
+            --text-primary: #2c3e50;
+            --text-secondary: #34495e;
+            --text-tertiary: #34495e;
+            --background: #f5f5f5;
+            --card-bg: #ffffff;
+            --border-color: #d5d5d5;
+            --highlight-bg: rgba(205, 127, 50, 0.15);
+            --highlight-border: #cd7f32;
+        }
+
+        body {
+            background: var(--background);
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 20px auto;
+            line-height: 1.4;
+            color: var(--text-primary);
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .header {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .header-left {
+            text-align: left;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--text-primary);
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .header h2 {
+            font-size: 18px;
+            color: var(--text-tertiary);
+            margin: 8px 0 0 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            margin: 20px 0 0 0;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .contact-line {
+            margin-bottom: 4px;
+        }
+
+        .contact-line:first-child {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .contact-line:nth-child(2) {
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .contact-line:last-child {
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-tertiary);
+        }
+
+        .main-content {
+            display: flex;
+            gap: 30px;
+        }
+
+        .left-column {
+            flex: 1;
+            max-width: 350px;
+        }
+
+        .right-column {
+            flex: 3;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-content {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 2px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li {
+            padding-left: 1.2em;
+            margin-bottom: 8px;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .left-column li {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .left-column li strong {
+            font-size: 14px;
+            color: var(--text-primary);
+        }
+
+        .left-column li em {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .keyword {
+            color: var(--primary-dark);
+            font-weight: 600;
+            background: var(--highlight-bg);
+            padding: 1px 4px;
+            border-radius: 3px;
+            border-left: 2px solid var(--highlight-border);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .certification-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .certification-group {
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 15px;
+            border-top: 2px solid var(--primary-color);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-group h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--text-primary);
+            margin: 0 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--primary-color);
+            font-weight: 600;
+        }
+
+        .certification-group ul {
+            margin: 0;
+        }
+
+        .certification-group li {
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .certification-group li strong {
+            font-size: 13px;
+            color: var(--text-primary);
+        }
+
+        .certification-group li em {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+
+        .reference-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .reference-card {
+            background: var(--card-bg);
+            border-radius: 6px;
+            padding: 15px;
+            border-top: 2px solid var(--primary-color);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .reference-card p {
+            margin: 0;
+            line-height: 1.4;
+            font-size: 13px;
+        }
+
+        .reference-role {
+            color: var(--primary-color);
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        .reference-divider {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin: 20px 0 15px 0;
+        }
+
+        .reference-divider h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0 15px;
+            background: var(--card-bg);
+            display: inline-block;
+            border-radius: 4px;
+            border-top: 2px solid var(--primary-color);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .job-divider {
+            height: 1px;
+            background: var(--primary-color);
+            margin: 20px 0;
+            opacity: 0.3;
+        }
+
+        .portfolio-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        .portfolio-button:hover {
+            background: var(--primary-dark);
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .job-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 16px;
+            margin-bottom: 2px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .company-name {
+            color: var(--primary-color);
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .date-location {
+            color: var(--text-tertiary);
+            font-size: 13px;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .job-description {
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        .job-description:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-description strong {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-left: 2px solid var(--highlight-border);
+        }
+
+        .degree-line {
+            white-space: nowrap;
+            display: block;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            .header, .section-content, .reference-card, .certification-group {
+                background: white;
+                box-shadow: none;
+                border-radius: 0;
+                border-top: 1px solid #000;
+            }
+            .main-content {
+                display: block;
+            }
+            .left-column, .right-column {
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-content {
+                flex-direction: column;
+            }
+            .left-column {
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="contact-info">
+                    <div class="contact-line">919 E Atkin Ave, Salt Lake City, UT 84106</div>
+                    <div class="contact-line"><a href="mailto:aec0713@westminsteru.edu">aec0713@westminsteru.edu</a> | (915) 487-7029</div>
+                    <div class="contact-line"><a href="https://www.linkedin.com/in/cruzadam91">LinkedIn</a> | <a href="https://github.com/cruzaddy91">GitHub</a></div>
+                </div>
+            </div>
+            <div class="header-right">
+                <h1>Adam Cruz</h1>
+                <h2>Computer Science Student<br>with a Data Science Minor</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="left-column">
+            <h2>Skills</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Software Development:</strong> <em><span class="keyword">Java Programming</span>, <span class="keyword">C# Development</span>, <span class="keyword">Object-Oriented Design</span>, <span class="keyword">Software Engineering</span>, <span class="keyword">System Design</span>, <span class="keyword">API Development</span>, <span class="keyword">Web Applications</span></em></li>
+                    <li><strong>Software Development Lifecycle:</strong> <em><span class="keyword">Requirements Analysis</span>, <span class="keyword">Design Documentation</span>, <span class="keyword">Software Development</span>, <span class="keyword">Testing & Quality Assurance</span>, <span class="keyword">System Integration</span>, <span class="keyword">Technical Documentation</span></em></li>
+                    <li><strong>Testing & Quality Assurance:</strong> <em><span class="keyword">Test Planning</span>, <span class="keyword">Test Procedures</span>, <span class="keyword">Software Testing</span>, <span class="keyword">Quality Assurance</span>, <span class="keyword">System Validation</span>, <span class="keyword">Performance Testing</span>, <span class="keyword">Integration Testing</span></em></li>
+                    <li><strong>Programming Languages:</strong> <em><span class="keyword">Java</span>, <span class="keyword">C#</span>, Python, JavaScript, TypeScript, C, HTML, CSS</em></li>
+                    <li><strong>Database & Data Management:</strong> <em><span class="keyword">SQL</span>, <span class="keyword">Database Systems</span>, <span class="keyword">Data Analysis</span>, <span class="keyword">Database Integration</span>, <span class="keyword">Web Services</span></em></li>
+                    <li><strong>Development Tools:</strong> <em><span class="keyword">Git</span>, <span class="keyword">GitHub</span>, <span class="keyword">VS Code</span>, <span class="keyword">IntelliJ IDEA</span>, <span class="keyword">Docker</span>, <span class="keyword">Postman</span>, <span class="keyword">Pytest</span></em></li>
+                    <li><strong>Aviation & Aerospace:</strong> <em><span class="keyword">Aircraft Weight & Balance</span>, <span class="keyword">Turbine Aircraft Operations</span>, <span class="keyword">Flight Management Systems</span>, <span class="keyword">Aviation Operations</span>, <span class="keyword">Center of Gravity Calculations</span></em></li>
+                    <li><strong>Military & Security:</strong> <em><span class="keyword">Security Systems</span>, <span class="keyword">Access Control</span>, <span class="keyword">System Integration</span>, <span class="keyword">Security Protocols</span>, <span class="keyword">Military Aircraft</span>, <span class="keyword">Security Operations</span></em></li>
+                    <li><strong>Professional Skills:</strong> <em><span class="keyword">Agile Methodologies</span>, <span class="keyword">Team Collaboration</span>, <span class="keyword">Customer Collaboration</span>, <span class="keyword">Technical Communication</span>, <span class="keyword">Problem Solving</span>, <span class="keyword">Leadership</span>, <span class="keyword">Project Management</span></em></li>
+                </ul>
+            </div>
+
+            <h2>Certifications</h2>
+            <div class="section-content">
+                <div class="certification-container">
+                    <div class="certification-group">
+                        <h4>In Progress</h4>
+                        <ul>
+                            <li><strong>AWS Cloud Practitioner</strong><br><em>In Progress</em></li>
+                            <li><strong>CompTIA Security+</strong><br><em>In Progress</em></li>
+                            <li><strong>CompTIA A+</strong><br><em>In Progress</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="certification-group">
+                        <h4>Healthcare & Safety</h4>
+                        <ul>
+                            <li><strong>CPR/AED</strong><br><em>American Red Cross - Feb 2024 - Feb 2026</em></li>
+                            <li><strong>Pharmacy Technician License</strong><br><em>Indiana Board of Pharmacy - Jul 2021</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="certification-group">
+                        <h4>Aviation</h4>
+                        <ul>
+                            <li><strong>Commercial Pilot Certificate</strong><br><em>FAA - May 2019</em></li>
+                            <li><strong>Instrument Rating</strong><br><em>FAA - Nov 2018</em></li>
+                            <li><strong>Complex Aircraft Endorsement</strong><br><em>FAA - Jul 2017</em></li>
+                            <li><strong>Private Pilot Certificate</strong><br><em>FAA - Oct 2015</em></li>
+                        </ul>
+                    </div>
+
+                    <div class="certification-group">
+                        <h4>Fitness & Training</h4>
+                        <ul>
+                            <li><strong>ACE CPT Certification</strong><br><em>Aug 2016</em></li>
+                            <li><strong>USAW Level 1</strong><br><em>Aug 2015</em></li>
+                            <li><strong>CrossFit Level 1</strong><br><em>Dec 2015</em></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Languages</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>English</strong> - Native</li>
+                    <li><strong>Spanish</strong> - Native</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <h2>Professional Summary</h2>
+            <div class="section-content">
+                <p>Computer Science student with specialized experience in <span class="keyword">software development</span>, <span class="keyword">system testing</span>, and <span class="keyword">quality assurance</span>, combined with extensive aviation background from Purdue University's Professional Flight program. Proven track record in <span class="keyword">full software development lifecycle</span> including requirements analysis, design documentation, development, and comprehensive testing. Experienced in <span class="keyword">Java programming</span>, <span class="keyword">database systems</span>, and <span class="keyword">web application development</span> with strong foundation in <span class="keyword">object-oriented design</span> and <span class="keyword">software engineering principles</span>. Demonstrated ability to handle <span class="keyword">complex system integration</span>, <span class="keyword">API development</span>, and <span class="keyword">technical documentation</span> for enterprise solutions. Unique combination of <span class="keyword">aviation operations knowledge</span> including aircraft weight and balance calculations, turbine aircraft operations, and flight management systems, with <span class="keyword">software engineering expertise</span>. Seeking opportunities in Software Engineering roles where I can leverage my technical skills and aviation domain knowledge to contribute to aerospace software solutions, particularly in weight and balance systems and flight operations software.</p>
+                <p><em>This resume was personally crafted using an HTML/CSS formatting framework to ensure a modern and professional presentation. I invite you to visit my online portfolio to explore my projects and technical capabilities in detail.</em></p>
+                <a href="https://addycportfolio.netlify.app" target="_blank" class="portfolio-button">View Portfolio</a>
+            </div>
+
+            <h2>Education</h2>
+            <div class="section-content">
+                <p class="degree-line"><strong>Bachelor of Science in Computer Science</strong>, Minor in Data Science<br>
+                <em>Westminster University</em>, <em>Salt Lake City, UT</em> | <em>Aug 2023 - May 2026 (Expected Graduation Date)</em><br>
+                <strong>Academic Excellence:</strong> <span class="keyword">3.6 GPA</span> | <span class="keyword">Dean's List</span></p>
+                <ul>
+                    <li>Relevant Coursework: Functional Programming, Database Systems, Software Engineering, Data Structures & Algorithms, Computer Systems & Programming, Operating Systems, Artificial Intelligence, Statistical Modeling, Statistical Analysis</li>
+                    <li>Computer Science & Data Science Tutor</li>
+                    <li>Supplemental Instructor for CMPT 215 (Introduction to Computer Science)</li>
+                </ul>
+                <p><strong>Bachelor of Science in Aviation Management</strong><br>
+                <em>Purdue University</em>, <em>West Lafayette, IN</em> | <em>Aug 2015 - May 2020</em></p>
+                <ul>
+                    <li>Relevant Coursework: Aerospace Vehicle Systems Design, Analysis And Operations, Turbine Flight Operations Lecture, Large Aircraft Systems, Aerospace Vehicle Propulsion And Tracking Systems, Advanced Transport Flight Operations, Turbine Aircraft Simulation Lab, Transport Aircraft Simulation Laboratory, Aviation Operations Management, Human Factors For Flight Crews, Aviation Command Leadership, Private Pilot Lecture, Private Pilot Flight, Commercial Pilot Lecture, Commercial Pilot Flight, Instrument Pilot Lecture, Instrument Pilot Flight</li>
+                </ul>
+            </div>
+
+            <h2>Technical Experience</h2>
+            <div class="section-content">
+                <p><strong>IT Intern</strong><br>
+                <em>EnableCV</em> - <em>Midvale, UT</em> | <em>2024 - Present</em></p>
+                <ul>
+                    <li>Designing and implementing <span class="keyword">software solutions</span> with <span class="keyword">full software development lifecycle</span> involvement including <span class="keyword">requirements analysis</span>, <span class="keyword">design documentation</span>, <span class="keyword">software development</span>, and <span class="keyword">comprehensive testing</span></li>
+                    <li>Developing <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span>, HTML5, and CSS3 with <span class="keyword">object-oriented design</span> principles and <span class="keyword">responsive design</span> for cross-platform compatibility</li>
+                    <li>Creating comprehensive <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for <span class="keyword">software applications</span>, implementing <span class="keyword">quality assurance</span> methodologies and <span class="keyword">system validation</span> processes</li>
+                    <li>Managing <span class="keyword">API development</span> and <span class="keyword">system integration</span> between multiple services, ensuring <span class="keyword">database integration</span> and <span class="keyword">web services</span> functionality</li>
+                    <li>Implementing <span class="keyword">security protocols</span> and <span class="keyword">access control</span> systems, maintaining <span class="keyword">system reliability</span> and <span class="keyword">data integrity</span> for enterprise solutions</li>
+                    <li>Conducting <span class="keyword">performance testing</span> and <span class="keyword">integration testing</span> to ensure <span class="keyword">software quality</span> and <span class="keyword">system reliability</span></li>
+                    <li>Creating comprehensive <span class="keyword">technical documentation</span> including <span class="keyword">API specifications</span>, <span class="keyword">integration maps</span>, and <span class="keyword">user training</span> materials</li>
+                    <li>Collaborating with <span class="keyword">customers</span> and <span class="keyword">stakeholders</span> to gather <span class="keyword">software requirements</span> and ensure <span class="keyword">customer satisfaction</span> with delivered solutions</li>
+                    <li>Utilizing <span class="keyword">agile methodologies</span> and <span class="keyword">team collaboration</span> to coordinate <span class="keyword">integrated testing activities</span> with software engineers and management</li>
+                    <li>Developing <span class="keyword">database systems</span> and <span class="keyword">SQL queries</span> for complex business logic, implementing <span class="keyword">data analysis</span> and <span class="keyword">reporting solutions</span></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Computer Science & Data Science Tutor</strong><br>
+                <em>Westminster University</em> - <em>Salt Lake City, UT</em> | <em>2023 - Present</em></p>
+                <ul>
+                    <li>Provide technical support and <span class="keyword">troubleshooting</span> for hardware and software issues</li>
+                    <li>Assist students with <span class="keyword">data analysis</span> projects using Python, R, and statistical modeling techniques</li>
+                    <li>Guide students in creating <span class="keyword">data visualizations</span> and interactive dashboards for academic projects</li>
+                    <li>Support <span class="keyword">database design</span> and SQL query optimization for student projects</li>
+                    <li>Implement <span class="keyword">security protocols</span> and maintain system integrity</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Supplemental Instructor</strong><br>
+                <em>Westminster University</em> - <em>Salt Lake City, UT</em> | <em>2023 - Present</em></p>
+                <ul>
+                    <li>Lead technical workshops on <span class="keyword">data visualization</span> and <span class="keyword">analytics</span> tools including Python libraries and statistical software</li>
+                    <li>Develop and maintain <span class="keyword">documentation</span> for technical procedures and best practices</li>
+                    <li>Implement and <span class="keyword">troubleshoot</span> various software platforms and tools</li>
+                    <li>Monitor system <span class="keyword">performance</span> and resolve technical issues</li>
+                    <li>Provide training on <span class="keyword">data analysis</span> techniques and <span class="keyword">statistical modeling</span> for students and faculty</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Inpatient Hospital Pharmacy Technician</strong><br>
+                <em>Indiana University Health</em> - <em>Indianapolis, IN</em> | <em>2022 - 2023</em></p>
+                <ul>
+                    <li>Managed and maintained complex healthcare information systems</li>
+                    <li>Implemented system improvements and <span class="keyword">security protocols</span></li>
+                    <li>Provided technical support and training for system users</li>
+                    <li><span class="keyword">Documented</span> procedures and maintained accurate system records</li>
+                    <li>Collaborated with IT teams to ensure system reliability and <span class="keyword">security</span></li>
+                </ul>
+            </div>
+
+            <h2>Military Experience</h2>
+            <div class="section-content">
+                <p><strong>Tactical Response Force Flight Chief</strong><br>
+                <em>United States Air Force</em> | <em>2012 - 2015</em></p>
+                <ul>
+                    <li>Led and coordinated complex <span class="keyword">security operations</span>, demonstrating strong leadership and decision-making abilities</li>
+                    <li>Managed critical <span class="keyword">information systems</span> and <span class="keyword">security protocols</span>, ensuring data integrity and system reliability</li>
+                    <li>Developed and implemented <span class="keyword">standard operating procedures</span> for security operations and emergency response</li>
+                    <li>Conducted regular <span class="keyword">system audits</span> and <span class="keyword">security assessments</span> to maintain operational readiness</li>
+                    <li>Trained and mentored team members in <span class="keyword">security protocols</span> and <span class="keyword">technical procedures</span></li>
+                    <li>Translated complex <span class="keyword">security protocols</span> and <span class="keyword">technical procedures</span> into clear, actionable instructions for diverse team members</li>
+                    <li>Demonstrated exceptional attention to detail in <span class="keyword">security assessments</span>, <span class="keyword">documentation</span>, and <span class="keyword">compliance reporting</span></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <p><strong>Flight Security Controller</strong><br>
+                <em>United States Air Force</em> | <em>2011 - 2012</em></p>
+                <ul>
+                    <li>Monitored and maintained <span class="keyword">security systems</span> and <span class="keyword">access control databases</span></li>
+                    <li>Coordinated with multiple departments to ensure <span class="keyword">system integration</span> and data accuracy</li>
+                    <li>Implemented <span class="keyword">security protocols</span> and maintained detailed <span class="keyword">documentation</span> of procedures</li>
+                    <li>Conducted regular <span class="keyword">system maintenance</span> and <span class="keyword">troubleshooting</span> of security equipment</li>
+                    <li>Managed <span class="keyword">access control systems</span> and user permissions</li>
+                </ul>
+            </div>
+
+            <h2>Projects</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Software Development & Testing Platform:</strong> Comprehensive <span class="keyword">software development</span> project demonstrating <span class="keyword">full software development lifecycle</span> including <span class="keyword">requirements analysis</span>, <span class="keyword">design documentation</span>, <span class="keyword">software development</span>, and <span class="keyword">comprehensive testing</span>. Developed <span class="keyword">web applications</span> using <span class="keyword">JavaScript</span>, HTML5, and CSS3 with <span class="keyword">object-oriented design</span> principles. Implemented <span class="keyword">test plans</span> and <span class="keyword">test procedures</span> for <span class="keyword">software applications</span>, ensuring <span class="keyword">quality assurance</span> and <span class="keyword">system validation</span>. Created comprehensive <span class="keyword">technical documentation</span> and <span class="keyword">user training</span> materials. Built with modern <span class="keyword">web technologies</span> and <span class="keyword">database systems</span>. <a href="https://ecv-internportfolio2025.netlify.app" target="_blank" class="portfolio-button">View Project Portfolio</a></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Database Integration & Web Services Platform:</strong> Enterprise solution demonstrating <span class="keyword">database integration</span> and <span class="keyword">web services</span> development. Implemented <span class="keyword">API development</span> and <span class="keyword">system integration</span> between multiple services. Developed <span class="keyword">SQL queries</span> for complex business logic and <span class="keyword">data analysis</span>. Created <span class="keyword">automated reports</span> and <span class="keyword">interactive dashboards</span> with <span class="keyword">performance testing</span> and <span class="keyword">integration testing</span>. Built with <span class="keyword">database systems</span>, <span class="keyword">web services</span>, and advanced <span class="keyword">data modeling</span> techniques. <a href="https://ecv-internportfolio2025.netlify.app" target="_blank" class="portfolio-button">View Project Portfolio</a></li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Mathsprout:</strong> Interactive <span class="keyword">web application</span> for tracking student progress. Demonstrated strong technical <span class="keyword">problem-solving</span> skills through <span class="keyword">system design</span> and implementation. Created comprehensive <span class="keyword">technical documentation</span> and user guides. Implemented secure user <span class="keyword">authentication</span> and <span class="keyword">data management systems</span>. Built with modern <span class="keyword">web technologies</span> including HTML5, CSS3, and <span class="keyword">JavaScript</span>.</li>
+                </ul>
+
+                <div class="job-divider"></div>
+
+                <ul>
+                    <li><strong>Weather App:</strong> Full stack <span class="keyword">web application</span> providing real-time weather data. Showcased ability to work with <span class="keyword">complex systems</span> and <span class="keyword">API development</span>. Implemented robust error handling and <span class="keyword">system monitoring</span>. Created detailed <span class="keyword">technical documentation</span> and user guides. Developed with focus on <span class="keyword">system reliability</span> and <span class="keyword">performance optimization</span>.</li>
+                </ul>
+            </div>
+
+            <h2>Additional Information</h2>
+            <div class="section-content">
+                <p><strong>Military Achievements</strong></p>
+                <ul>
+                    <li>USAF Commendation Medal, Good Conduct Medal, Humanitarian Medal</li>
+                    <li>NCO Academy Graduate, Airman Leadership School Graduate</li>
+                    <li>Global Strike Command <span class="keyword">Assaulter School</span> Graduate, Global Strike Command Winter Warrior Graduate</li>
+                    <li>Global Strike Command <span class="keyword">Nuclear Integration Course</span> for Leaders Graduate</li>
+                </ul>
+
+                <p><strong>Athletic Achievements</strong></p>
+                <ul>
+                    <li>USAW University Nationals Competitor (2017-2019)</li>
+                    <li>USAW American Open Series Competitor (2021-2023)</li>
+                </ul>
+            </div>
+
+            <h2>References</h2>
+            <div class="section-content">
+                <div class="reference-container">
+                    <div class="reference-divider">
+                        <h3>Academic Advisors</h3>
+                    </div>
+                    
+                    <div class="reference-card">
+                        <p><strong>Kathryn Lenth, Ph.D</strong><br>
+                        <em>Associate Professor, Computer Science</em><br>
+                        <span class="reference-role">Academic Advisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322317">(801) 832-2317</a><br>
+                        <a href="mailto:klenth@westminsteru.edu">klenth@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Jingsai Liang, Ph.D</strong><br>
+                        <em>Department Chair, Data Science<br>Associate Professor, Computer & Data Science</em><br>
+                        <span class="reference-role">Academic Advisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322421">(801) 832-2421</a><br>
+                        <a href="mailto:jliang@westminsteru.edu">jliang@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-divider">
+                        <h3>Direct Supervisors</h3>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Traci Siriprathane, MS</strong><br>
+                        <em>Assistant Dean of Students<br>Director of Student Wellbeing & Support</em><br>
+                        <span class="reference-role">Direct Supervisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322862">(801) 832-2862</a><br>
+                        <a href="mailto:tsiriprathane@westminsteru.edu">tsiriprathane@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Janine Wittwer, Ph.D</strong><br>
+                        <em>Professor, Mathematics</em><br>
+                        <span class="reference-role">Direct Supervisor</span><br>
+                        Westminster University<br>
+                        <a href="tel:8018322404">(801) 832-2404</a><br>
+                        <a href="mailto:jwittwer@westminsteru.edu">jwittwer@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-divider">
+                        <h3>Professional References</h3>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Helen Hu, Ph.D</strong><br>
+                        <em>Department Chair & Professor, Computer Science</em><br>
+                        Westminster University<br>
+                        <a href="tel:8018322362">(801) 832-2362</a><br>
+                        <a href="mailto:hhu@westminsteru.edu">hhu@westminsteru.edu</a></p>
+                    </div>
+
+                    <div class="reference-card">
+                        <p><strong>Greg Gagne, MS</strong><br>
+                        <em>Professor, Computer Science</em><br>
+                        Westminster University<br>
+                        <a href="tel:8018322361">(801) 832-2361</a><br>
+                        <a href="mailto:ggagne@westminsteru.edu">ggagne@westminsteru.edu</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

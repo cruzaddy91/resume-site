@@ -11,8 +11,8 @@
   status = 200
 
 [[redirects]]
-  from = "/cover-letter"
-  to = "/cruz_coverLetter.html"
+  from = "/letter-of-objective"
+  to = "/cruz_letterOfObjective.html"
   status = 200
 
 [[redirects]]
