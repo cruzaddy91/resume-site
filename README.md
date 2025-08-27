@@ -18,9 +18,9 @@ resume-site/
 │
 ├── src/                  # Main source code
 │   ├── index.html        # Main portfolio homepage
-│   ├── landing.html      # Resume & cover letter landing page
+│   ├── landing.html      # Resume & Letter of Objective landing page
 │   ├── cruz_resume.html  # Interactive resume page
-│   ├── cruz_coverLetter.html # Interactive cover letter page
+│   ├── cruz_letterOfObjective.html # Interactive Letter of Objective page
 │   ├── success.html      # Form submission success page
 │   ├── styles.css        # Main stylesheet
 │   ├── script.js         # JavaScript functionality
@@ -28,7 +28,7 @@ resume-site/
 │   └── assets/           # Static assets
 │       ├── documents/    # PDF files
 │       │   ├── cruz_resume.pdf
-│       │   └── cruz_coverLetter.pdf
+│       │   └── cruz_letterOfObjective.pdf
 │       └── landing_page_picture.jpeg # Profile image
 ```
 
@@ -37,7 +37,7 @@ resume-site/
 - **Responsive Design**: Mobile-first approach with modern CSS
 - **Contact Form**: Integrated form with email notifications via Netlify Functions
 - **Interactive Resume**: HTML version with downloadable PDF
-- **Cover Letter**: Professional cover letter with multiple themes
+- **Letter of Objective**: Professional Letter of Objective with multiple themes
 - **Spam Protection**: reCAPTCHA integration
 - **Rate Limiting**: Prevents form abuse
 - **Success Page**: Personalized confirmation messages
