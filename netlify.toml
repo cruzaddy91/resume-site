@@ -1,6 +1,21 @@
 [build]
   publish = "src"
 
+[forms]
+  # Enable Netlify Forms
+  [forms.contact]
+    # Form configuration for the contact form
+    name = "contact"
+    # Success page redirect
+    success_page = "/success"
+
+# Form processing - send to custom function
+[[forms.processing]]
+  # Process contact form submissions
+  form = "contact"
+  # Send to custom function
+  function = "contact-form"
+
 
 
 

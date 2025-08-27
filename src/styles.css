@@ -535,6 +535,10 @@ section {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+.hidden {
+    display: none;
+}
+
 .form-group {
     margin-bottom: 1.5rem;
 }
