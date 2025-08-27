@@ -284,17 +284,13 @@ if (performance.navigation.type === 1) {
     sessionStorage.clear();
 }
 
-// Disable form submission - keep UI but redirect to YouTube only
+// Enable form submission for Netlify Forms
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent form submission to Netlify/GitHub
+    // Form submission is now enabled for Netlify Forms
     const contactForm = document.querySelector('form[name="contact"]');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent form submission
-            return false;
-        });
+        console.log('Contact form enabled for Netlify Forms submission');
     }
-    console.log('Form submission disabled - only YouTube redirect works');
     
     // Image protection
     const profileImage = document.querySelector('.profile-image');
